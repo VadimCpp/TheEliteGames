@@ -120,9 +120,53 @@ theEliteGames.elements.Game.prototype.getDetails_ = function() {
     gameType.addClassName(goog.getCssName('game-type'));
     gameType.getMainElement().innerHTML = this.game_.type;
 
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
+    var descriptionBlock = this.getDescriptionBlock_();
+
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
+    var storesBlock = this.getStoresBlock_();
+
     details.appendChild(gameType);
+    details.appendChild(descriptionBlock);
+    details.appendChild(storesBlock);
+
+    return details;
+};
+
+
+/**
+ * @return {!theEliteGames.elements.Base}
+ * @private
+ */
+theEliteGames.elements.Game.prototype.getDescriptionBlock_ = function() {
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
+    var descriptionBlock = new theEliteGames.elements.Base('div');
+    descriptionBlock.addClassName(goog.getCssName('description-block'));
 
     // TODO: implement
 
-    return details;
+    return descriptionBlock;
+};
+
+
+/**
+ * @return {!theEliteGames.elements.Base}
+ * @private
+ */
+theEliteGames.elements.Game.prototype.getStoresBlock_ = function() {
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
+    var storesBlock = new theEliteGames.elements.Base('div');
+    storesBlock.addClassName(goog.getCssName('stores-block'));
+
+    // TODO: implement
+
+    return storesBlock;
 };

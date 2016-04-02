@@ -108,6 +108,18 @@ div.the-elite-games-elements-game {
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb76b', endColorstr='#ff7f04',GradientType=0 ); /* IE6-9 */
 
         }
+
+        > div.description-block {
+            display: flex;
+            background: palevioletred;
+            min-height: 75px;
+        }
+
+        > div.stores-block {
+            border-radius: 0 0 8px 8px;
+            background: greenyellow;
+            min-height: 25px;
+        }
     }
 }
 
