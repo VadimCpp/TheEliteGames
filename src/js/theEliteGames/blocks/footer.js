@@ -28,8 +28,6 @@ goog.require('theEliteGames.elements.Base');
 theEliteGames.blocks.Footer = function() {
     theEliteGames.elements.Base.call(this);
     this.addClassName(goog.getCssName('the-elite-games-blocks-footer'));
-
-    this.getMainElement().innerHTML = 'Footer';
-    // TODO: implement
+    this.getMainElement().innerHTML = '© 2014-2016 Elite Games Ltd';
 };
 goog.inherits(theEliteGames.blocks.Footer, theEliteGames.elements.Base);

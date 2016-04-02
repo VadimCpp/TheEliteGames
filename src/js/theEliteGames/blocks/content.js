@@ -20,6 +20,11 @@ goog.provide('theEliteGames.blocks.Content');
 goog.require('theEliteGames.elements.Base');
 
 
+/**
+ * @typedef {{title: !string}}
+ */
+theEliteGames.Game;
+
 
 /**
  * @constructor
@@ -29,7 +34,64 @@ theEliteGames.blocks.Content = function() {
     theEliteGames.elements.Base.call(this);
     this.addClassName(goog.getCssName('the-elite-games-blocks-content'));
 
-    this.getMainElement().innerHTML = 'Content';
-    // TODO: implement
+    /**
+     * @type {!Array<!theEliteGames.Game>}
+     * @private
+     */
+    this.games_ = this.getGames_();
+
+    /**
+     * @type {!number}
+     */
+    var i = 0;
+
+    /**
+     * @type {!number}
+     */
+    var l = this.games_.length;
+
+    for (; i < l; i++) {
+        var gameElem = new theEliteGames.elements.Base();
+        gameElem.addClassName(goog.getCssName('the-elite-games-game'));
+        gameElem.getMainElement().innerHTML = this.games_[i].title;
+        this.appendChild(gameElem);
+    }
 };
 goog.inherits(theEliteGames.blocks.Content, theEliteGames.elements.Base);
+
+
+/**
+ * @returns {!Array<!theEliteGames.Game>}
+ * @private
+ */
+theEliteGames.blocks.Content.prototype.getGames_ = function() {
+    return [
+        {
+            'title' : 'Royal Offense'
+        },
+        {
+            'title' : 'Royal Heroes'
+        },
+        {
+            'title' : 'Royal Blacksmith'
+        },
+        {
+            'title' : 'Mech Defender'
+        },
+        {
+            'title' : 'Control Craft 2'
+        },
+        {
+            'title' : 'Control Craft 3'
+        },
+        {
+            'title' : 'Merlins Lab'
+        },
+        {
+            'title' : 'Fly to the Moon!'
+        },
+        {
+            'title' : 'Regulator'
+        }
+    ];
+};
