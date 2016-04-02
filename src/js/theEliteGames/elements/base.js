@@ -15,7 +15,7 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-goog.provide('theEliteGames.Base');
+goog.provide('theEliteGames.elements.Base');
 
 goog.require('goog.dom');
 
@@ -25,7 +25,7 @@ goog.require('goog.dom');
  * @param {?string=} opt_tagName
  * @constructor
  */
-theEliteGames.Base = function(opt_tagName) {
+theEliteGames.elements.Base = function(opt_tagName) {
 
     /**
      * @type {!string}
@@ -45,25 +45,25 @@ theEliteGames.Base = function(opt_tagName) {
  * @return {!Element}
  * @public
  */
-theEliteGames.Base.prototype.getMainElement = function() {
+theEliteGames.elements.Base.prototype.getMainElement = function() {
     return this.mainElem_;
 };
 
 
 /**
- * @param {!theEliteGames.Base} elem
+ * @param {!theEliteGames.elements.Base} elem
  * @public
  */
-theEliteGames.Base.prototype.appendChild = function(elem) {
+theEliteGames.elements.Base.prototype.appendChild = function(elem) {
     this.mainElem_.appendChild(elem.getMainElement());
 };
 
 
 /**
- * @param {!theEliteGames.Base} elem
+ * @param {!theEliteGames.elements.Base} elem
  * @public
  */
-theEliteGames.Base.prototype.removeChild = function(elem) {
+theEliteGames.elements.Base.prototype.removeChild = function(elem) {
     this.mainElem_.removeChild(elem.getMainElement());
 };
 
@@ -71,7 +71,7 @@ theEliteGames.Base.prototype.removeChild = function(elem) {
 /**
  * @public
  */
-theEliteGames.Base.prototype.removeAllChildren = function() {
+theEliteGames.elements.Base.prototype.removeAllChildren = function() {
     //
     // http://stackoverflow.com/a/3955238/4222953
     //
@@ -86,7 +86,7 @@ theEliteGames.Base.prototype.removeAllChildren = function() {
  * @param {!string} className
  * @public
  */
-theEliteGames.Base.prototype.addClassName = function(className) {
+theEliteGames.elements.Base.prototype.addClassName = function(className) {
     this.mainElem_.classList.add(className);
 };
 
@@ -95,6 +95,6 @@ theEliteGames.Base.prototype.addClassName = function(className) {
  * @param {!string} className
  * @public
  */
-theEliteGames.Base.prototype.removeClassName = function(className) {
+theEliteGames.elements.Base.prototype.removeClassName = function(className) {
     this.mainElem_.classList.remove(className);
 };

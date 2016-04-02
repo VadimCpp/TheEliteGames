@@ -17,24 +17,24 @@
 
 goog.provide('theEliteGames.App');
 
-goog.require('theEliteGames.Base');
+goog.require('theEliteGames.elements.Base');
 goog.require('theEliteGames.View');
 
 
 
 /**
  * @constructor
- * @extends {theEliteGames.Base}
+ * @extends {theEliteGames.elements.Base}
  */
 theEliteGames.App = function() {
-    theEliteGames.Base.call(this);
+    theEliteGames.elements.Base.call(this);
 
     /**
      * @type {?theEliteGames.View}
      */
     this.view_ = null;
 };
-goog.inherits(theEliteGames.App, theEliteGames.Base);
+goog.inherits(theEliteGames.App, theEliteGames.elements.Base);
 
 
 /**

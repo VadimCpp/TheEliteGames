@@ -17,19 +17,19 @@
 
 goog.provide('theEliteGames.blocks.Footer');
 
-goog.require('theEliteGames.Base');
+goog.require('theEliteGames.elements.Base');
 
 
 
 /**
  * @constructor
- * @extends {theEliteGames.Base}
+ * @extends {theEliteGames.elements.Base}
  */
 theEliteGames.blocks.Footer = function() {
-    theEliteGames.Base.call(this);
+    theEliteGames.elements.Base.call(this);
     this.addClassName(goog.getCssName('the-elite-games-blocks-footer'));
 
     this.getMainElement().innerHTML = 'Footer';
     // TODO: implement
 };
-goog.inherits(theEliteGames.blocks.Footer, theEliteGames.Base);
+goog.inherits(theEliteGames.blocks.Footer, theEliteGames.elements.Base);

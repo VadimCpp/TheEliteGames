@@ -17,7 +17,7 @@
 
 goog.provide('theEliteGames.View');
 
-goog.require('theEliteGames.Base');
+goog.require('theEliteGames.elements.Base');
 goog.require('theEliteGames.blocks.Header');
 goog.require('theEliteGames.blocks.Footer');
 goog.require('theEliteGames.blocks.Content');
@@ -26,10 +26,10 @@ goog.require('theEliteGames.blocks.Content');
 
 /**
  * @constructor
- * @extends {theEliteGames.Base}
+ * @extends {theEliteGames.elements.Base}
  */
 theEliteGames.View = function() {
-    theEliteGames.Base.call(this);
+    theEliteGames.elements.Base.call(this);
     this.addClassName(goog.getCssName('the-elite-games-view'));
 
     /**
@@ -54,4 +54,4 @@ theEliteGames.View = function() {
     this.appendChild(this.content_);
     this.appendChild(this.footer_);
 };
-goog.inherits(theEliteGames.View, theEliteGames.Base);
+goog.inherits(theEliteGames.View, theEliteGames.elements.Base);

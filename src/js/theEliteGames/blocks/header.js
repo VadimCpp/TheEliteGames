@@ -17,19 +17,25 @@
 
 goog.provide('theEliteGames.blocks.Header');
 
-goog.require('theEliteGames.Base');
+goog.require('theEliteGames.elements.Base');
 
 
 
 /**
  * @constructor
- * @extends {theEliteGames.Base}
+ * @extends {theEliteGames.elements.Base}
  */
 theEliteGames.blocks.Header = function() {
-    theEliteGames.Base.call(this);
+    theEliteGames.elements.Base.call(this);
     this.addClassName(goog.getCssName('the-elite-games-blocks-header'));
 
-    this.getMainElement().innerHTML = 'Header';
-    // TODO: implement
+    /**
+     * @type {!theEliteGames.elements.Base}
+     * @private
+     */
+    this.logo_ = new theEliteGames.elements.Base('div');
+    this.logo_.addClassName('img-logo');
+    this.appendChild(this.logo_);
+
 };
-goog.inherits(theEliteGames.blocks.Header, theEliteGames.Base);
+goog.inherits(theEliteGames.blocks.Header, theEliteGames.elements.Base);
