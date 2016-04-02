@@ -149,7 +149,29 @@ theEliteGames.elements.Game.prototype.getDescriptionBlock_ = function() {
     var descriptionBlock = new theEliteGames.elements.Base('div');
     descriptionBlock.addClassName(goog.getCssName('description-block'));
 
-    // TODO: implement
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
+    var icon = new theEliteGames.elements.Base('div');
+    icon.addClassName(goog.getCssName('icon'));
+    icon.addClassName(this.game_.iconClass);
+
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
+    var iconContainer = new theEliteGames.elements.Base('div');
+    iconContainer.addClassName(goog.getCssName('icon-container'));
+    iconContainer.appendChild(icon);
+
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
+    var description = new theEliteGames.elements.Base('div');
+    description.addClassName(goog.getCssName('description'));
+    description.getMainElement().innerHTML = this.game_.description;
+
+    descriptionBlock.appendChild(iconContainer);
+    descriptionBlock.appendChild(description);
 
     return descriptionBlock;
 };

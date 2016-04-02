@@ -110,9 +110,21 @@ div.the-elite-games-elements-game {
         }
 
         > div.description-block {
-            display: flex;
-            background: palevioletred;
-            min-height: 75px;
+            > div.icon-container {
+                padding: 8px 7px;
+                float: left;
+                height: 240px;
+
+                > div.icon {
+                    border-radius: 12px;
+                }
+            }
+
+            > div.description {
+                height: 240px;
+                padding: 5px;
+
+            }
         }
 
         > div.stores-block {
@@ -128,7 +140,6 @@ div.the-elite-games-blocks-header {
     align-items: center;
     justify-content: center;
     height: 75px;
-    border: 1px solid black;
     box-sizing: border-box;
 }
 
@@ -138,7 +149,6 @@ div.the-elite-games-blocks-content {
     justify-content: center;
     flex-wrap: wrap;
 
-    border: 1px solid black;
     margin: 5px 0;
     box-sizing: border-box;
 }
@@ -148,8 +158,8 @@ div.the-elite-games-blocks-footer {
     align-items: center;
     justify-content: center;
     height: 75px;
-    border: 1px solid black;
     box-sizing: border-box;
+    font: 400 18px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 div.the-elite-games-view {
