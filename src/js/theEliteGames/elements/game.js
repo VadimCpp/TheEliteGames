@@ -19,6 +19,7 @@ goog.provide('theEliteGames.elements.Game');
 
 goog.require('theEliteGames.elements.Base');
 goog.require('theEliteGames.models.Game');
+goog.require('theEliteGames.models.StoreClasses');
 
 
 
@@ -163,10 +164,49 @@ theEliteGames.elements.Game.prototype.getStoresBlock_ = function() {
     /**
      * @type {!theEliteGames.elements.Base}
      */
-    var storesBlock = new theEliteGames.elements.Base('div');
+    var storesBlock = new theEliteGames.elements.Base();
     storesBlock.addClassName(goog.getCssName('stores-block'));
 
-    // TODO: implement
+    /**
+     * TODO: remove bracket notation.
+     *
+     * See the problem:
+     * http://stackoverflow.com/q/36379364/4222953
+     *
+     * @type {!Array<!number>}
+     */
+    var stores = this.game_['stores'];
+
+    /**
+     * @type {!number}
+     */
+    var i = 0;
+
+    /**
+     * @type {!number}
+     */
+    var l = stores.length;
+
+    for (; i < l; i++) {
+        /**
+         * @type {!number}
+         */
+        var storeIndex = stores[i];
+
+        /**
+         * @type {!string}
+         */
+        var storeClass = theEliteGames.models.StoreClasses[storeIndex];
+
+        /**
+         * @type {!theEliteGames.elements.Base}
+         */
+        var storeElem = new theEliteGames.elements.Base();
+        storeElem.addClassName(goog.getCssName('store'));
+        storeElem.addClassName(storeClass);
+
+        storesBlock.appendChild(storeElem);
+    }
 
     return storesBlock;
 };

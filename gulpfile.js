@@ -7,6 +7,7 @@ var closureCompiler = require('gulp-closure-compiler');
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
 var del = require('del');
+var cssmin = require('gulp-cssmin');
 
 
 gulp.task('js', function() {
@@ -16,8 +17,8 @@ gulp.task('js', function() {
                 fileName: 'app.js',
                 compilerFlags: {
                     closure_entry_point: 'theEliteGames.App',
-                    //compilation_level: 'ADVANCED_OPTIMIZATIONS',
-                    compilation_level: 'WHITESPACE_ONLY',
+                    compilation_level: 'ADVANCED_OPTIMIZATIONS',
+                    //compilation_level: 'WHITESPACE_ONLY',
                     only_closure_dependencies: true,
                     warning_level: 'VERBOSE'
                 }
@@ -44,6 +45,7 @@ gulp.task('html', function() {
 gulp.task('sass', function() {
     gulp.src('src/sass/style.scss')
         .pipe(sass())
+        .pipe(cssmin())
         .pipe(gulp.dest('dist/css'));
 });
 

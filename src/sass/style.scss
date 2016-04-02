@@ -128,7 +128,7 @@ div.img-stores-steam {
 div.the-elite-games-elements-game {
     margin: 15px;
     min-width: 300px;
-    max-width: 350px;
+    max-width: 406px;
 
     > div.title {
         margin-bottom: 5px;
@@ -186,8 +186,13 @@ div.the-elite-games-elements-game {
 
         > div.stores-block {
             border-radius: 0 0 8px 8px;
-            background: greenyellow;
-            min-height: 25px;
+            padding: 4px;
+            min-height: 53px;
+
+            > div.store {
+                display:inline-block;
+                margin: 3px;
+            }
         }
     }
 }

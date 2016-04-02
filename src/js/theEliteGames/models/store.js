@@ -23,12 +23,12 @@ goog.provide('theEliteGames.models.Store');
  * @enum {!number}
  */
 theEliteGames.models.Store = {
-    AMAZON: 1,      // goog.getCssName('img-stores-amazon')
-    APPLE: 2,       // goog.getCssName('img-stores-apple')
-    GOOGLE: 3,      // goog.getCssName('img-stores-google')
-    KICKSTARTER: 4, // goog.getCssName('img-stores-kickstarter')
-    NOOK: 5,        // goog.getCssName('img-stores-nook')
-    OUYA: 6,        // goog.getCssName('img-stores-ouya')
-    SAMSUNG: 7,     // goog.getCssName('img-stores-samsung')
-    STEAM: 8        // goog.getCssName('img-stores-steam')
+    AMAZON: 0,      // goog.getCssName('img-stores-amazon')
+    APPLE: 1,       // goog.getCssName('img-stores-apple')
+    GOOGLE: 2,      // goog.getCssName('img-stores-google')
+    KICKSTARTER: 3, // goog.getCssName('img-stores-kickstarter')
+    NOOK: 4,        // goog.getCssName('img-stores-nook')
+    OUYA: 5,        // goog.getCssName('img-stores-ouya')
+    SAMSUNG: 6,     // goog.getCssName('img-stores-samsung')
+    STEAM: 7        // goog.getCssName('img-stores-steam')
 };

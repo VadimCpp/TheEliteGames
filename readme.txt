@@ -43,3 +43,7 @@ Setting up working environment:
 
 10. Install del
 > npm install --save-dev del
+
+
+11. Install gulp-cssmin
+npm install --save-dev gulp-cssmin
