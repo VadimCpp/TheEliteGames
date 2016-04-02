@@ -40,3 +40,6 @@ Setting up working environment:
 8. Install run-sequence
 > npm install --save-dev run-sequence
 
+
+9. Install gulp-sass
+> npm install --save-dev gulp-sass

@@ -15,10 +15,9 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-goog.provide('theEliteGames.App');
+goog.provide('theEliteGames.View');
 
 goog.require('theEliteGames.Base');
-goog.require('theEliteGames.View');
 
 
 
@@ -26,36 +25,10 @@ goog.require('theEliteGames.View');
  * @constructor
  * @extends {theEliteGames.Base}
  */
-theEliteGames.App = function() {
+theEliteGames.View = function() {
     theEliteGames.Base.call(this);
+    this.addClassName(goog.getCssName('the-elite-games-view'));
 
-    /**
-     * @type {?theEliteGames.Base}
-     */
-    this.view_ = null;
+    // TODO: implement
 };
-goog.inherits(theEliteGames.App, theEliteGames.Base);
-
-
-/**
- * @public
- */
-theEliteGames.App.prototype.run = function() {
-    if (!this.view_) {
-        this.view_ = new theEliteGames.View();
-        this.view_.getMainElement().innerHTML = '<span> It works! </span>';
-        this.appendChild(this.view_);
-    }
-};
-
-
-/**
- * @inheritDoc
- */
-theEliteGames.App.prototype.appendChild = function(elem) {
-    document.body.appendChild(elem.getMainElement());
-};
-
-
-goog.exportSymbol('theEliteGames.App', theEliteGames.App);
-goog.exportSymbol('theEliteGames.App.prototype.run', theEliteGames.App.prototype.run);
+goog.inherits(theEliteGames.View, theEliteGames.Base);
