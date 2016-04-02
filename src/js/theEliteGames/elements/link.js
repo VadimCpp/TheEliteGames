@@ -15,34 +15,36 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-goog.provide('theEliteGames.blocks.Header');
+goog.provide('theEliteGames.elements.Link');
 
 goog.require('theEliteGames.elements.Base');
-goog.require('theEliteGames.elements.Link');
 
 
 
 /**
+ * @param {?string=} opt_url
+ * @param {?string=} opt_target
+ *
  * @constructor
  * @extends {theEliteGames.elements.Base}
  */
-theEliteGames.blocks.Header = function() {
-    theEliteGames.elements.Base.call(this);
-    this.addClassName(goog.getCssName('the-elite-games-blocks-header'));
+theEliteGames.elements.Link = function(opt_url, opt_target) {
+    theEliteGames.elements.Base.call(this, 'a');
 
     /**
-     * @type {!theEliteGames.elements.Link}
+     * @type {!string}
+     * @private
      */
-    var linkLogo = new theEliteGames.elements.Link('http://theelitegames.net/', '_blank');
+    this.url_ = opt_url ? opt_url : 'javascript:void(0);';
 
     /**
-     * @type {!theEliteGames.elements.Base}
+     * @type {!string}
+     * @private
      */
-    var logo = new theEliteGames.elements.Base('div');
-    logo.addClassName('img-logo');
+    this.target_ = opt_target ? opt_target : '_self';
 
-    linkLogo.appendChild(logo);
-    this.appendChild(linkLogo);
+    this.setAttribute('href', this.url_);
+    this.setAttribute('target', this.target_);
 
 };
-goog.inherits(theEliteGames.blocks.Header, theEliteGames.elements.Base);
+goog.inherits(theEliteGames.elements.Link, theEliteGames.elements.Base);

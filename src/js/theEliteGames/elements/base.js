@@ -98,3 +98,23 @@ theEliteGames.elements.Base.prototype.addClassName = function(className) {
 theEliteGames.elements.Base.prototype.removeClassName = function(className) {
     this.mainElem_.classList.remove(className);
 };
+
+
+/**
+ * @param {!string} name
+ * @param {!string} value
+ * @public
+ */
+theEliteGames.elements.Base.prototype.setAttribute = function(name, value) {
+    this.mainElem_.setAttribute(name, value);
+};
+
+
+/**
+ * @param {!string} name
+ * @return {!string}
+ * @public
+ */
+theEliteGames.elements.Base.prototype.getAttribute = function(name) {
+    return this.mainElem_.getAttribute(name);
+};
