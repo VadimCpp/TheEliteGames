@@ -21,6 +21,61 @@ div.img-logo {
     height: 44px;
 }
 
+div.img-icons-ro {
+    background: url('../img/icons/ro.png');
+    width: 100px;
+    height: 100px;
+}
+
+div.img-icons-rh {
+    background: url('../img/icons/rh.png');
+    width: 100px;
+    height: 100px;
+}
+
+div.img-icons-bs {
+    background: url('../img/icons/bs.png');
+    width: 100px;
+    height: 100px;
+}
+
+div.img-icons-md {
+    background: url('../img/icons/md.png');
+    width: 100px;
+    height: 100px;
+}
+
+div.img-icons-cc2 {
+    background: url('../img/icons/cc2.png');
+    width: 100px;
+    height: 100px;
+}
+
+div.img-icons-cc3 {
+    background: url('../img/icons/cc3.png');
+    width: 100px;
+    height: 100px;
+}
+
+div.img-icons-ml {
+    background: url('../img/icons/ml.png');
+    width: 100px;
+    height: 100px;
+}
+
+div.img-icons-mn {
+    background: url('../img/icons/mn.png');
+    width: 100px;
+    height: 100px;
+}
+
+div.img-icons-r {
+    background: url('../img/icons/r.png');
+    width: 100px;
+    height: 100px;
+}
+
+
 div.the-elite-games-elements-game {
     margin: 15px;
     min-width: 300px;
@@ -54,7 +109,7 @@ div.the-elite-games-blocks-header {
 
 div.the-elite-games-blocks-content {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     flex-wrap: wrap;
 

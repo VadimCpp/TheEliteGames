@@ -16,7 +16,8 @@ gulp.task('js', function() {
                 fileName: 'app.js',
                 compilerFlags: {
                     closure_entry_point: 'theEliteGames.App',
-                    compilation_level: 'ADVANCED_OPTIMIZATIONS',
+                    //compilation_level: 'ADVANCED_OPTIMIZATIONS',
+                    compilation_level: 'WHITESPACE_ONLY',
                     only_closure_dependencies: true,
                     warning_level: 'VERBOSE'
                 }
@@ -47,7 +48,7 @@ gulp.task('sass', function() {
 
 
 gulp.task('img', function() {
-    return gulp.src('src/img/*.png')
+    return gulp.src('src/img/**/*.png')
         .pipe(gulp.dest('dist/img'));
 });
 

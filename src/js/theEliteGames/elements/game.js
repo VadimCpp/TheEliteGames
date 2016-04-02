@@ -50,7 +50,21 @@ theEliteGames.elements.Game = function(game) {
      */
     var description = new theEliteGames.elements.Base('div');
     description.addClassName(goog.getCssName('description'));
-    description.getMainElement().innerHTML = this.game_.description;
+
+    /**
+     * @type {/theEliteGames.elements.Base}
+     */
+    var descriptionText = new theEliteGames.elements.Base('span');
+    descriptionText.getMainElement().innerHTML = this.game_.description;
+
+    /**
+     * @type {/theEliteGames.elements.Base}
+     */
+    var descriptionIcon = new theEliteGames.elements.Base();
+    descriptionIcon.addClassName(this.game_.iconClass);
+
+    description.appendChild(descriptionIcon);
+    description.appendChild(descriptionText);
 
     this.appendChild(title);
     this.appendChild(description);
