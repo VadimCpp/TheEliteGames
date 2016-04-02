@@ -22,8 +22,25 @@ div.img-logo {
 }
 
 div.the-elite-games-elements-game {
-    border: 1px solid darkred;
+    margin: 15px;
     min-width: 300px;
+    min-height: 200px;
+    max-width: 350px;
+
+    > div.title {
+        display: block;
+        text-align: center;
+        border: 1px solid orangered;
+        border-radius: 10px 10px 0 0;
+        background: orange;
+    }
+
+    > div.description {
+        display: block;
+        padding: 10px;
+        border: 1px solid orangered;
+        border-top-width: 0;
+    }
 }
 
 div.the-elite-games-blocks-header {

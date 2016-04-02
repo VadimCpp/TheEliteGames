@@ -38,7 +38,22 @@ theEliteGames.elements.Game = function(game) {
      */
     this.game_ = game;
 
-    this.getMainElement().innerHTML = this.game_.title;
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
+    var title = new theEliteGames.elements.Base('div');
+    title.addClassName(goog.getCssName('title'));
+    title.getMainElement().innerHTML = this.game_.title;
+
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
+    var description = new theEliteGames.elements.Base('div');
+    description.addClassName(goog.getCssName('description'));
+    description.getMainElement().innerHTML = this.game_.description;
+
+    this.appendChild(title);
+    this.appendChild(description);
 
 };
 goog.inherits(theEliteGames.elements.Game, theEliteGames.elements.Base);
