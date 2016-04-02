@@ -46,8 +46,14 @@ gulp.task('sass', function() {
 });
 
 
+gulp.task('img', function() {
+    return gulp.src('src/img/*.png')
+        .pipe(gulp.dest('dist/img'));
+});
+
+
 gulp.task('build', function(callback) {
-    runSequence('clean', 'html', 'sass', 'js', callback);
+    runSequence('clean', 'html', 'sass', 'img', 'js', callback);
 });
 
 
