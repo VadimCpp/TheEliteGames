@@ -15,11 +15,20 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-goog.provide('theEliteGames.models.Game');
+goog.provide('theEliteGames.models.Store');
 
 
 
 /**
- * @typedef {{title: !string, type: !string, description: !string, iconClass: !string, stores: !Array<!number>}}
+ * @enum {!number}
  */
-theEliteGames.models.Game;
+theEliteGames.models.Store = {
+    AMAZON: 1,      // goog.getCssName('img-stores-amazon')
+    APPLE: 2,       // goog.getCssName('img-stores-apple')
+    GOOGLE: 3,      // goog.getCssName('img-stores-google')
+    KICKSTARTER: 4, // goog.getCssName('img-stores-kickstarter')
+    NOOK: 5,        // goog.getCssName('img-stores-nook')
+    OUYA: 6,        // goog.getCssName('img-stores-ouya')
+    SAMSUNG: 7,     // goog.getCssName('img-stores-samsung')
+    STEAM: 8        // goog.getCssName('img-stores-steam')
+};
