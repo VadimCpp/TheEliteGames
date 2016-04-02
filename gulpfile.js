@@ -51,4 +51,11 @@ gulp.task('build', function(callback) {
 });
 
 
-gulp.task('default', ['build']);
+gulp.task('watch', function() {
+    gulp.watch('src/src/index.html', ['build']);
+    gulp.watch('src/sass/style.scss', ['build']);
+    gulp.watch('src/js/theEliteGames/**/*.js', ['build']);
+});
+
+
+gulp.task('default', ['build', 'watch']);
