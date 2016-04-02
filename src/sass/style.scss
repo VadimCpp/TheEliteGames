@@ -21,6 +21,11 @@ div.img-logo {
     height: 44px;
 }
 
+div.the-elite-games-elements-game {
+    border: 1px solid darkred;
+    min-width: 300px;
+}
+
 div.the-elite-games-blocks-header {
     display: flex;
     align-items: center;
@@ -34,6 +39,8 @@ div.the-elite-games-blocks-content {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+
     border: 1px solid black;
     margin: 5px 0;
     box-sizing: border-box;

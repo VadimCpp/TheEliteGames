@@ -18,12 +18,9 @@
 goog.provide('theEliteGames.blocks.Content');
 
 goog.require('theEliteGames.elements.Base');
+goog.require('theEliteGames.elements.Game');
+goog.require('theEliteGames.models.Game');
 
-
-/**
- * @typedef {{title: !string}}
- */
-theEliteGames.Game;
 
 
 /**
@@ -35,7 +32,7 @@ theEliteGames.blocks.Content = function() {
     this.addClassName(goog.getCssName('the-elite-games-blocks-content'));
 
     /**
-     * @type {!Array<!theEliteGames.Game>}
+     * @type {!Array<!theEliteGames.models.Game>}
      * @private
      */
     this.games_ = this.getGames_();
@@ -51,9 +48,7 @@ theEliteGames.blocks.Content = function() {
     var l = this.games_.length;
 
     for (; i < l; i++) {
-        var gameElem = new theEliteGames.elements.Base();
-        gameElem.addClassName(goog.getCssName('the-elite-games-game'));
-        gameElem.getMainElement().innerHTML = this.games_[i].title;
+        var gameElem = new theEliteGames.elements.Game(this.games_[i]);
         this.appendChild(gameElem);
     }
 };
@@ -61,37 +56,62 @@ goog.inherits(theEliteGames.blocks.Content, theEliteGames.elements.Base);
 
 
 /**
- * @returns {!Array<!theEliteGames.Game>}
+ * @returns {!Array<!theEliteGames.models.Game>}
  * @private
  */
 theEliteGames.blocks.Content.prototype.getGames_ = function() {
     return [
         {
-            'title' : 'Royal Offense'
+            'title' : 'Royal Offense',
+            'description' : 'Royal Offense contains elements of role play: while fulfilling your orders, the heroes ' +
+                            'improve their skills and talents, as well as earn cash to be spent on new equipment, we' +
+                            'apons, and magical elixirs.'
         },
         {
-            'title' : 'Royal Heroes'
+            'title' : 'Royal Heroes',
+            'description' : 'A land plagued by black magic and creatures that crawl out of the darkness. Once this w' +
+                            'as a great kingdom. It could be great again. Hire an army of legendary heroes and battl' +
+                            'e vast waves of monsters.'
         },
         {
-            'title' : 'Royal Blacksmith'
+            'title' : 'Royal Blacksmith',
+            'description' : 'Build your own royal Blacksmith. With blackjack and stuff. Soon on every devices.'
         },
         {
-            'title' : 'Mech Defender'
+            'title' : 'Mech Defender',
+            'description' : 'Pilot a Mech to defend your home from zombies. MechDefender is a next chapter in Hero T' +
+                            'ower Defense series. With Tower and Weapons and new tricky maps.'
         },
         {
-            'title' : 'Control Craft 2'
+            'title' : 'Control Craft 2',
+            'description' : 'A fast thinking RTS game, with tactic capabilities and graphics in unique style. Take o' +
+                            'ver the enemy colonies to battle your way through challenging levels that call for your' +
+                            ' skill and wit. Upgrade your troop, pimp up your super weapons and smash enemies to sav' +
+                            'e your Planet.'
         },
         {
-            'title' : 'Control Craft 3'
+            'title' : 'Control Craft 3',
+            'description' : 'Command your troops to attack enemy control points. Utilize a wide range of troops and ' +
+                            'tactical abilities. During the heat of the battle, tactical decisions of when, where an' +
+                            'd how to attack will win or lose you the war.'
         },
         {
-            'title' : 'Merlins Lab'
+            'title' : 'Merlins Lab',
+            'description' : 'Merlins Lab is an puzzle game in which you try to find the philosopher' + "'" + 's ston' +
+                            'e. The closer you to final aim, the more points you score.'
         },
         {
-            'title' : 'Fly to the Moon!'
+            'title' : 'Fly to the Moon!',
+            'description' : 'One step at a time, your space program is taking off. Use the money earned from each la' +
+                            'unch to upgrade your rocket. Grab all the powerups and fuel you can while heading for t' +
+                            'he stratosphere. Avoid colliding with blimps, balloons and UFOs - they hurt! How fast c' +
+                            'an you get to the moon?'
         },
         {
-            'title' : 'Regulator'
+            'title' : 'Regulator',
+            'description' : '"Regulator" - an action/platformer in the style of metroidvania. The player searches th' +
+                            'rough an underground base for world' + "'" + 's most dangerous terrorist leader, and it' +
+                            's definitely not to reward him with candies and hugs.'
         }
     ];
 };
