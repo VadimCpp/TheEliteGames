@@ -15,10 +15,9 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-goog.provide('theEliteGames.App');
+goog.provide('theEliteGames.blocks.Header');
 
 goog.require('theEliteGames.Base');
-goog.require('theEliteGames.View');
 
 
 
@@ -26,35 +25,11 @@ goog.require('theEliteGames.View');
  * @constructor
  * @extends {theEliteGames.Base}
  */
-theEliteGames.App = function() {
+theEliteGames.blocks.Header = function() {
     theEliteGames.Base.call(this);
+    this.addClassName(goog.getCssName('the-elite-games-blocks-header'));
 
-    /**
-     * @type {?theEliteGames.View}
-     */
-    this.view_ = null;
+    this.getMainElement().innerHTML = 'Header';
+    // TODO: implement
 };
-goog.inherits(theEliteGames.App, theEliteGames.Base);
-
-
-/**
- * @public
- */
-theEliteGames.App.prototype.run = function() {
-    if (!this.view_) {
-        this.view_ = new theEliteGames.View();
-        this.appendChild(this.view_);
-    }
-};
-
-
-/**
- * @inheritDoc
- */
-theEliteGames.App.prototype.appendChild = function(elem) {
-    document.body.appendChild(elem.getMainElement());
-};
-
-
-goog.exportSymbol('theEliteGames.App', theEliteGames.App);
-goog.exportSymbol('theEliteGames.App.prototype.run', theEliteGames.App.prototype.run);
+goog.inherits(theEliteGames.blocks.Header, theEliteGames.Base);

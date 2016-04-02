@@ -18,6 +18,9 @@
 goog.provide('theEliteGames.View');
 
 goog.require('theEliteGames.Base');
+goog.require('theEliteGames.blocks.Header');
+goog.require('theEliteGames.blocks.Footer');
+goog.require('theEliteGames.blocks.Content');
 
 
 
@@ -29,6 +32,26 @@ theEliteGames.View = function() {
     theEliteGames.Base.call(this);
     this.addClassName(goog.getCssName('the-elite-games-view'));
 
-    // TODO: implement
+    /**
+     * @type {!theEliteGames.blocks.Header}
+     * @private
+     */
+    this.header_ = new theEliteGames.blocks.Header();
+
+    /**
+     * @type {!theEliteGames.blocks.Content}
+     * @private
+     */
+    this.content_ = new theEliteGames.blocks.Content();
+
+    /**
+     * @type {!theEliteGames.blocks.Footer}
+     * @private
+     */
+    this.footer_ = new theEliteGames.blocks.Footer();
+
+    this.appendChild(this.header_);
+    this.appendChild(this.content_);
+    this.appendChild(this.footer_);
 };
 goog.inherits(theEliteGames.View, theEliteGames.Base);
