@@ -38,37 +38,6 @@ theEliteGames.elements.Game = function(game) {
      */
     this.game_ = game;
 
-
-
-
-    ///**
-    // * @type {!theEliteGames.elements.Base}
-    // */
-    //var title = new theEliteGames.elements.Base('div');
-    //title.addClassName(goog.getCssName('title'));
-    //title.getMainElement().innerHTML = this.game_.title;
-    //
-    ///**
-    // * @type {!theEliteGames.elements.Base}
-    // */
-    //var description = new theEliteGames.elements.Base('div');
-    //description.addClassName(goog.getCssName('description'));
-    //
-    ///**
-    // * @type {/theEliteGames.elements.Base}
-    // */
-    //var descriptionText = new theEliteGames.elements.Base('span');
-    //descriptionText.getMainElement().innerHTML = this.game_.description;
-    //
-    ///**
-    // * @type {/theEliteGames.elements.Base}
-    // */
-    //var descriptionIcon = new theEliteGames.elements.Base();
-    //descriptionIcon.addClassName(this.game_.iconClass);
-    //
-    //description.appendChild(descriptionIcon);
-    //description.appendChild(descriptionText);
-
     /**
      * @type {!theEliteGames.elements.Base}
      */
@@ -143,6 +112,7 @@ theEliteGames.elements.Game.prototype.getDetails_ = function() {
  * @private
  */
 theEliteGames.elements.Game.prototype.getDescriptionBlock_ = function() {
+
     /**
      * @type {!theEliteGames.elements.Base}
      */
@@ -154,7 +124,15 @@ theEliteGames.elements.Game.prototype.getDescriptionBlock_ = function() {
      */
     var icon = new theEliteGames.elements.Base('div');
     icon.addClassName(goog.getCssName('icon'));
-    icon.addClassName(this.game_.iconClass);
+
+    //
+    // TODO: remove bracket notation.
+    //
+    // See the problem:
+    // http://stackoverflow.com/q/36379364/4222953
+    //
+
+    icon.addClassName(this.game_['iconClass']);
 
     /**
      * @type {!theEliteGames.elements.Base}
