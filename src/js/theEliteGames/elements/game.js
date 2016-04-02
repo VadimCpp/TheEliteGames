@@ -38,6 +38,59 @@ theEliteGames.elements.Game = function(game) {
      */
     this.game_ = game;
 
+
+
+
+    ///**
+    // * @type {!theEliteGames.elements.Base}
+    // */
+    //var title = new theEliteGames.elements.Base('div');
+    //title.addClassName(goog.getCssName('title'));
+    //title.getMainElement().innerHTML = this.game_.title;
+    //
+    ///**
+    // * @type {!theEliteGames.elements.Base}
+    // */
+    //var description = new theEliteGames.elements.Base('div');
+    //description.addClassName(goog.getCssName('description'));
+    //
+    ///**
+    // * @type {/theEliteGames.elements.Base}
+    // */
+    //var descriptionText = new theEliteGames.elements.Base('span');
+    //descriptionText.getMainElement().innerHTML = this.game_.description;
+    //
+    ///**
+    // * @type {/theEliteGames.elements.Base}
+    // */
+    //var descriptionIcon = new theEliteGames.elements.Base();
+    //descriptionIcon.addClassName(this.game_.iconClass);
+    //
+    //description.appendChild(descriptionIcon);
+    //description.appendChild(descriptionText);
+
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
+    var title = this.getTitle_();
+
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
+    var details = this.getDetails_();
+
+    this.appendChild(title);
+    this.appendChild(details);
+
+};
+goog.inherits(theEliteGames.elements.Game, theEliteGames.elements.Base);
+
+
+/**
+ * @return {!theEliteGames.elements.Base}
+ * @private
+ */
+theEliteGames.elements.Game.prototype.getTitle_ = function() {
     /**
      * @type {!theEliteGames.elements.Base}
      */
@@ -45,29 +98,31 @@ theEliteGames.elements.Game = function(game) {
     title.addClassName(goog.getCssName('title'));
     title.getMainElement().innerHTML = this.game_.title;
 
+    return title;
+};
+
+
+/**
+ * @return {!theEliteGames.elements.Base}
+ * @private
+ */
+theEliteGames.elements.Game.prototype.getDetails_ = function() {
     /**
      * @type {!theEliteGames.elements.Base}
      */
-    var description = new theEliteGames.elements.Base('div');
-    description.addClassName(goog.getCssName('description'));
+    var details = new theEliteGames.elements.Base('div');
+    details.addClassName(goog.getCssName('details'));
 
     /**
-     * @type {/theEliteGames.elements.Base}
+     * @type {!theEliteGames.elements.Base}
      */
-    var descriptionText = new theEliteGames.elements.Base('span');
-    descriptionText.getMainElement().innerHTML = this.game_.description;
+    var gameType = new theEliteGames.elements.Base('div');
+    gameType.addClassName(goog.getCssName('game-type'));
+    gameType.getMainElement().innerHTML = this.game_.type;
 
-    /**
-     * @type {/theEliteGames.elements.Base}
-     */
-    var descriptionIcon = new theEliteGames.elements.Base();
-    descriptionIcon.addClassName(this.game_.iconClass);
+    details.appendChild(gameType);
 
-    description.appendChild(descriptionIcon);
-    description.appendChild(descriptionText);
+    // TODO: implement
 
-    this.appendChild(title);
-    this.appendChild(description);
-
+    return details;
 };
-goog.inherits(theEliteGames.elements.Game, theEliteGames.elements.Base);
