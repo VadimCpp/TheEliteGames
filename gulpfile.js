@@ -3,10 +3,10 @@
  */
 
 var gulp = require('gulp');
-var clean = require('gulp-clean');
 var closureCompiler = require('gulp-closure-compiler');
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
+var del = require('del');
 
 
 gulp.task('js', function() {
@@ -28,9 +28,10 @@ gulp.task('js', function() {
 });
 
 
-gulp.task('clean', function () {
-    return gulp.src(['app.js', 'dist/**/*'], {read: false})
-        .pipe(clean());
+gulp.task('del', function () {
+    return del([
+        'dist/**/*'
+    ]);
 });
 
 
@@ -54,7 +55,7 @@ gulp.task('img', function() {
 
 
 gulp.task('build', function(callback) {
-    runSequence('clean', 'html', 'sass', 'img', 'js', callback);
+    runSequence('del', 'html', 'sass', 'img', 'js', callback);
 });
 
 

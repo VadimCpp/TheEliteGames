@@ -21,10 +21,6 @@ Setting up working environment:
 > npm install --save-dev gulp
 
 
-4. Install gulp-clean
-> npm install --save-dev gulp-clean
-
-
 5. Go to ./src/js/ folder and clone GoogleClosure:
 > git clone https://github.com/google/closure-library
 
@@ -43,3 +39,7 @@ Setting up working environment:
 
 9. Install gulp-sass
 > npm install --save-dev gulp-sass
+
+
+10. Install del
+> npm install --save-dev del
