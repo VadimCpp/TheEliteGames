@@ -5,3 +5,4 @@ dist/
 
 node_modules/
 
+src/js/closure-library/
