@@ -18,8 +18,9 @@
 goog.provide('theEliteGames.elements.Game');
 
 goog.require('theEliteGames.elements.Base');
+goog.require('theEliteGames.elements.Link');
 goog.require('theEliteGames.models.Game');
-goog.require('theEliteGames.models.StoreClasses');
+goog.require('theEliteGames.models.StoreIconClass');
 
 
 
@@ -173,7 +174,7 @@ theEliteGames.elements.Game.prototype.getStoresBlock_ = function() {
      * See the problem:
      * http://stackoverflow.com/q/36379364/4222953
      *
-     * @type {!Array<!number>}
+     * @type {!Array<!theEliteGames.models.Store>}
      */
     var stores = this.game_['stores'];
 
@@ -189,23 +190,36 @@ theEliteGames.elements.Game.prototype.getStoresBlock_ = function() {
 
     for (; i < l; i++) {
         /**
-         * @type {!number}
+         * @type {!theEliteGames.models.Store}
          */
-        var storeIndex = stores[i];
+        var store = stores[i];
 
         /**
          * @type {!string}
          */
-        var storeClass = theEliteGames.models.StoreClasses[storeIndex];
+        var storeClass = theEliteGames.models.StoreIconClass[store['iconId']];
+
+        /**
+         * @type {!theEliteGames.elements.Link}
+         */
+        var storeLink = new theEliteGames.elements.Link(store['url'], '_blank');
 
         /**
          * @type {!theEliteGames.elements.Base}
          */
-        var storeElem = new theEliteGames.elements.Base();
-        storeElem.addClassName(goog.getCssName('store'));
-        storeElem.addClassName(storeClass);
+        var externalLinkIcon = new theEliteGames.elements.Base();
+        externalLinkIcon.addClassName(goog.getCssName('img-external-link'));
 
-        storesBlock.appendChild(storeElem);
+        /**
+         * @type {!theEliteGames.elements.Base}
+         */
+        var storeIcon = new theEliteGames.elements.Base();
+        storeIcon.addClassName(goog.getCssName('store'));
+        storeIcon.addClassName(storeClass);
+
+        storeIcon.appendChild(externalLinkIcon);
+        storeLink.appendChild(storeIcon);
+        storesBlock.appendChild(storeLink);
     }
 
     return storesBlock;

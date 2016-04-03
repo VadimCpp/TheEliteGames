@@ -15,20 +15,20 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-goog.provide('theEliteGames.models.StoreIconClass');
+goog.provide('theEliteGames.models.StoreIconId');
 
 
 
 /**
- * @type {!Array<!string>}
+ * @enum {!number}
  */
-theEliteGames.models.StoreIconClass = [
-    goog.getCssName('img-stores-amazon'), // AMAZON
-    goog.getCssName('img-stores-apple'), // APPLE
-    goog.getCssName('img-stores-google'), // GOOGLE
-    goog.getCssName('img-stores-kickstarter'), // KICKSTARTER
-    goog.getCssName('img-stores-nook'), // NOOK
-    goog.getCssName('img-stores-ouya'), // OUYA
-    goog.getCssName('img-stores-samsung'), // SAMSUNG
-    goog.getCssName('img-stores-steam') // STEAM
-];
+theEliteGames.models.StoreIconId = {
+    AMAZON: 0,      // goog.getCssName('img-stores-amazon')
+    APPLE: 1,       // goog.getCssName('img-stores-apple')
+    GOOGLE: 2,      // goog.getCssName('img-stores-google')
+    KICKSTARTER: 3, // goog.getCssName('img-stores-kickstarter')
+    NOOK: 4,        // goog.getCssName('img-stores-nook')
+    OUYA: 5,        // goog.getCssName('img-stores-ouya')
+    SAMSUNG: 6,     // goog.getCssName('img-stores-samsung')
+    STEAM: 7        // goog.getCssName('img-stores-steam')
+};

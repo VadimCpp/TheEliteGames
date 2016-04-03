@@ -20,7 +20,7 @@ goog.provide('theEliteGames.blocks.Content');
 goog.require('theEliteGames.elements.Base');
 goog.require('theEliteGames.elements.Game');
 goog.require('theEliteGames.models.Game');
-goog.require('theEliteGames.models.Store');
+goog.require('theEliteGames.models.StoreIconId');
 
 
 
@@ -70,12 +70,12 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             'apons, and magical elixirs.',
             'iconClass' : goog.getCssName('img-icons-ro'),
             'stores' : [
-                theEliteGames.models.Store.GOOGLE,
-                theEliteGames.models.Store.APPLE,
-                theEliteGames.models.Store.AMAZON,
-                theEliteGames.models.Store.NOOK,
-                theEliteGames.models.Store.SAMSUNG,
-                theEliteGames.models.Store.OUYA
+                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'javascript:void(0);' }
             ]
         },
         {
@@ -86,13 +86,13 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             'e vast waves of monsters.',
             'iconClass' : goog.getCssName('img-icons-rh'),
             'stores' : [
-                theEliteGames.models.Store.GOOGLE,
-                theEliteGames.models.Store.APPLE,
-                theEliteGames.models.Store.AMAZON,
-                theEliteGames.models.Store.NOOK,
-                theEliteGames.models.Store.OUYA,
-                theEliteGames.models.Store.STEAM,
-                theEliteGames.models.Store.KICKSTARTER
+                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.STEAM, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.KICKSTARTER, 'url' : 'javascript:void(0);' }
             ]
         },
         {
@@ -110,8 +110,8 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             'ower Defense series. With Tower and Weapons and new tricky maps.',
             'iconClass' : goog.getCssName('img-icons-md'),
             'stores' : [
-                theEliteGames.models.Store.NOOK,
-                theEliteGames.models.Store.SAMSUNG
+                { 'iconId' : theEliteGames.models.StoreIconId.NOOK },
+                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG }
             ]
         },
         {
@@ -123,11 +123,11 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             'e your Planet.',
             'iconClass' : goog.getCssName('img-icons-cc2'),
             'stores' : [
-                theEliteGames.models.Store.APPLE,
-                theEliteGames.models.Store.GOOGLE,
-                theEliteGames.models.Store.AMAZON,
-                theEliteGames.models.Store.NOOK,
-                theEliteGames.models.Store.SAMSUNG
+                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'javascript:void(0);' }
             ]
         },
         {
@@ -138,11 +138,11 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             'd how to attack will win or lose you the war.',
             'iconClass' : goog.getCssName('img-icons-cc3'),
             'stores' : [
-                theEliteGames.models.Store.APPLE,
-                theEliteGames.models.Store.GOOGLE,
-                theEliteGames.models.Store.AMAZON,
-                theEliteGames.models.Store.NOOK,
-                theEliteGames.models.Store.SAMSUNG
+                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'javascript:void(0);' }
             ]
         },
         {
@@ -152,10 +152,10 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             'e. The closer you to final aim, the more points you score.',
             'iconClass' : goog.getCssName('img-icons-ml'),
             'stores' : [
-                theEliteGames.models.Store.APPLE,
-                theEliteGames.models.Store.GOOGLE,
-                theEliteGames.models.Store.AMAZON,
-                theEliteGames.models.Store.NOOK,
+                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'javascript:void(0);' }
             ]
         },
         {
@@ -167,12 +167,12 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             'an you get to the moon?',
             'iconClass' : goog.getCssName('img-icons-mn'),
             'stores' : [
-                theEliteGames.models.Store.APPLE,
-                theEliteGames.models.Store.GOOGLE,
-                theEliteGames.models.Store.AMAZON,
-                theEliteGames.models.Store.NOOK,
-                theEliteGames.models.Store.SAMSUNG,
-                theEliteGames.models.Store.OUYA
+                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'javascript:void(0);' },
+                { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'javascript:void(0);' }
             ]
         },
         {
@@ -183,7 +183,7 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             's definitely not to reward him with candies and hugs.',
             'iconClass' : goog.getCssName('img-icons-r'),
             'stores' : [
-                theEliteGames.models.Store.STEAM
+                { 'iconId' : theEliteGames.models.StoreIconId.STEAM, 'url' : 'javascript:void(0);' }
             ]
         }
     ];
