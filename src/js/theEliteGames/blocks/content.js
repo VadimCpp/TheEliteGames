@@ -70,12 +70,12 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             'apons, and magical elixirs.',
             'iconClass' : goog.getCssName('img-icons-ro'),
             'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'javascript:void(0);' }
+                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'https://play.google.com/store/apps/details?id=com.elitegamesltd.royaloffense' },
+                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'https://itunes.apple.com/app/royal-offense/id659970011?mt=8' },
+                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/Elite-Games-Ltd-Royal-Offense/dp/B00EP3BGWY/' },
+                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/royal-offense-elite-games-ltd/1116824411?ean=2940147147849' },
+                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000674566' },
+                { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'https://www.ouya.tv/game/Royal-Offense/' }
             ]
         },
         {
@@ -86,13 +86,13 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             'e vast waves of monsters.',
             'iconClass' : goog.getCssName('img-icons-rh'),
             'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.STEAM, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.KICKSTARTER, 'url' : 'javascript:void(0);' }
+                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'https://play.google.com/store/apps/details?id=com.elitegamesltd.royalheroes' },
+                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'http://itunes.apple.com/app/id985595486?mt=8&uo=4&at=11l5Y9' },
+                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/dp/B017ODZ9GU/' },
+                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'https://www.ouya.tv/game/Royal-Heroes/' },
+                { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'http://steamcommunity.com/sharedfiles/filedetails/?id=523260275' },
+                { 'iconId' : theEliteGames.models.StoreIconId.STEAM, 'url' : 'http://steamcommunity.com/sharedfiles/filedetails/?id=523260275' },
+                { 'iconId' : theEliteGames.models.StoreIconId.KICKSTARTER, 'url' : 'https://www.kickstarter.com/projects/1198400811/royal-heroes-for-ouya-mac-pc-mobile-and-more' }
             ]
         },
         {
@@ -110,8 +110,8 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             'ower Defense series. With Tower and Weapons and new tricky maps.',
             'iconClass' : goog.getCssName('img-icons-md'),
             'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.NOOK },
-                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG }
+                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/mechdefender-elite-games/1120177584?ean=2940147213544'  },
+                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000904283'  }
             ]
         },
         {
@@ -123,11 +123,11 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             'e your Planet.',
             'iconClass' : goog.getCssName('img-icons-cc2'),
             'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'javascript:void(0);' }
+                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'https://itunes.apple.com/app/controlcraft-2/id531648566?mt=8' },
+                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'https://play.google.com/store/apps/details?id=com.elitegamesltd.cc2' },
+                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/Elite-Games-Ltd-ControlCraft-2/dp/B008A0NU2W/' },
+                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/controlcraft-2-elite-games/1116423854?ean=2940147144275' },
+                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000639828' }
             ]
         },
         {
@@ -138,11 +138,11 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             'd how to attack will win or lose you the war.',
             'iconClass' : goog.getCssName('img-icons-cc3'),
             'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'javascript:void(0);' }
+                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'https://itunes.apple.com/app/controlcraft-3/id670524067?mt=8' },
+                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'https://play.google.com/store/apps/details?id=com.elitegamesltd.cc3' },
+                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/Cybernate-ControlCraft-3/dp/B00EP4EKZ8/' },
+                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/controlcraft-3-elite-games-ltd/1117255490?ean=2940147155769' },
+                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000780150' }
             ]
         },
         {
@@ -152,10 +152,10 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             'e. The closer you to final aim, the more points you score.',
             'iconClass' : goog.getCssName('img-icons-ml'),
             'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'javascript:void(0);' }
+                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'https://itunes.apple.com/us/app/merlins-lab/id740544214?mt=8' },
+                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'https://play.google.com/store/apps/details?id=com.elitegamesltd.merlins' },
+                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/Elite-Games-Ltd-Merlins-Lab/dp/B00HRCLIA0' },
+                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/merlins-lab-elitegames-ltd/1118327290?ean=2940147174920' }
             ]
         },
         {
@@ -167,12 +167,12 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             'an you get to the moon?',
             'iconClass' : goog.getCssName('img-icons-mn'),
             'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'javascript:void(0);' },
-                { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'javascript:void(0);' }
+                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'https://itunes.apple.com/app/fly-to-the-moon!/id534274992?mt=8' },
+                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'https://play.google.com/store/apps/details?id=com.elitegamesltd.tomoon' },
+                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/Elite-Games-Ltd-Fly-Moon/dp/B00FGXYZZ2/' },
+                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/fly-to-the-moon-elite-games-net/1117255487?ean=2940147155745' },
+                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000639798' },
+                { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'https://www.ouya.tv/game/Fly-to-the-Moon/' }
             ]
         },
         {
@@ -183,7 +183,7 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                             's definitely not to reward him with candies and hugs.',
             'iconClass' : goog.getCssName('img-icons-r'),
             'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.STEAM, 'url' : 'javascript:void(0);' }
+                { 'iconId' : theEliteGames.models.StoreIconId.STEAM, 'url' : 'http://steamcommunity.com/sharedfiles/filedetails/?id=374322738' }
             ]
         }
     ];
