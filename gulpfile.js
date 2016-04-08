@@ -8,6 +8,8 @@ var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
 var del = require('del');
 var cssmin = require('gulp-cssmin');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 
 
 gulp.task('js', function() {
@@ -17,15 +19,14 @@ gulp.task('js', function() {
                 fileName: 'app.js',
                 compilerFlags: {
                     closure_entry_point: 'theEliteGames.App',
-                    //compilation_level: 'ADVANCED_OPTIMIZATIONS',
-                    compilation_level: 'WHITESPACE_ONLY',
+                    compilation_level: 'ADVANCED_OPTIMIZATIONS',
+                    //compilation_level: 'WHITESPACE_ONLY',
                     only_closure_dependencies: true,
                     warning_level: 'VERBOSE'
                 }
             })
         )
         .pipe(gulp.dest('dist/js'));
-
 });
 
 
@@ -52,6 +53,11 @@ gulp.task('sass', function() {
 
 gulp.task('img', function() {
     return gulp.src('src/img/**/*.png')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
         .pipe(gulp.dest('dist/img'));
 });
 

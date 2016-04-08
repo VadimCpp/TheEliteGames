@@ -46,4 +46,12 @@ Setting up working environment:
 
 
 11. Install gulp-cssmin
-npm install --save-dev gulp-cssmin
+> npm install --save-dev gulp-cssmin
+
+
+12. Install imagemin-pngquant
+npm install --save-dev imagemin-pngquant
+
+
+13. Install gulp-imagemin
+npm install --save-dev gulp-imagemin
