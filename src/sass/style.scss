@@ -133,6 +133,14 @@ div.img-external-link {
     opacity: .4;
 }
 
+div.img-player-play {
+    background: url('../img/player-play.png') no-repeat center center;
+    height: 100px;
+    width: 100px;
+    opacity: .4;
+}
+
+
 div.img-external-link:hover {
     opacity: 1;
 }
@@ -140,6 +148,7 @@ div.img-external-link:hover {
 
 div.the-elite-games-elements-game {
 
+    margin-bottom: 15px;
     max-width: 406px;
 
     > div.title {

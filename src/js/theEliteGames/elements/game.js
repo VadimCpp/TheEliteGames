@@ -128,17 +128,16 @@ theEliteGames.elements.Game.prototype.getDescriptionBlock_ = function() {
     /**
      * @type {!theEliteGames.elements.Base}
      */
+    var playerPlayIcon = new theEliteGames.elements.Base();
+    playerPlayIcon.addClassName(goog.getCssName('img-player-play'));
+
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
     var icon = new theEliteGames.elements.Base('div');
     icon.addClassName(goog.getCssName('icon'));
-
-    //
-    // TODO: remove bracket notation.
-    //
-    // See the problem:
-    // http://stackoverflow.com/q/36379364/4222953
-    //
-
     icon.addClassName(this.game_['iconClass']);
+    icon.appendChild(playerPlayIcon);
 
     /**
      * @type {!theEliteGames.elements.Base}
@@ -173,9 +172,9 @@ theEliteGames.elements.Game.prototype.getStoresBlock_ = function() {
     storesBlock.addClassName(goog.getCssName('stores-block'));
 
     /**
-     * TODO: remove bracket notation.
+     * NOTE! Bracket notation is use because closure compile renames variables.
      *
-     * See the problem:
+     * More details on a problem:
      * http://stackoverflow.com/q/36379364/4222953
      *
      * @type {!Array<!theEliteGames.models.Store>}
