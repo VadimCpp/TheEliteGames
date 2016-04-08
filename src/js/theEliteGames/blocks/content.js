@@ -31,6 +31,14 @@ goog.require('theEliteGames.models.StoreIconId');
 theEliteGames.blocks.Content = function() {
     theEliteGames.elements.Base.call(this);
     this.addClassName(goog.getCssName('the-elite-games-blocks-content'));
+    this.addClassName(goog.getCssName('uk-container'));
+    this.addClassName(goog.getCssName('uk-container-center'));
+
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
+    var grid = new theEliteGames.elements.Base();
+    grid.addClassName(goog.getCssName('uk-grid'));
 
     /**
      * @type {!Array<!theEliteGames.models.Game>}
@@ -50,8 +58,10 @@ theEliteGames.blocks.Content = function() {
 
     for (; i < l; i++) {
         var gameElem = new theEliteGames.elements.Game(this.games_[i]);
-        this.appendChild(gameElem);
+        grid.appendChild(gameElem);
     }
+
+    this.appendChild(grid);
 };
 goog.inherits(theEliteGames.blocks.Content, theEliteGames.elements.Base);
 

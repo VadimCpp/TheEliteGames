@@ -17,8 +17,8 @@ gulp.task('js', function() {
                 fileName: 'app.js',
                 compilerFlags: {
                     closure_entry_point: 'theEliteGames.App',
-                    compilation_level: 'ADVANCED_OPTIMIZATIONS',
-                    //compilation_level: 'WHITESPACE_ONLY',
+                    //compilation_level: 'ADVANCED_OPTIMIZATIONS',
+                    compilation_level: 'WHITESPACE_ONLY',
                     only_closure_dependencies: true,
                     warning_level: 'VERBOSE'
                 }
@@ -62,8 +62,8 @@ gulp.task('build', function(callback) {
 
 
 gulp.task('watch', function() {
-    gulp.watch('src/src/index.html', ['build']);
-    gulp.watch('src/sass/style.scss', ['build']);
+    gulp.watch('src/src/index.html', ['html']);
+    gulp.watch('src/sass/*.scss', ['sass']);
     gulp.watch('src/js/theEliteGames/**/*.js', ['build']);
 });
 

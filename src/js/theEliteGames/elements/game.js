@@ -33,6 +33,10 @@ goog.require('theEliteGames.models.StoreIconClass');
 theEliteGames.elements.Game = function(game) {
     theEliteGames.elements.Base.call(this);
     this.addClassName(goog.getCssName('the-elite-games-elements-game'));
+    this.addClassName(goog.getCssName('uk-width-small-1-1'));
+    this.addClassName(goog.getCssName('uk-width-medium-1-2'));
+    this.addClassName(goog.getCssName('uk-width-large-1-3'));
+    this.addClassName(goog.getCssName('uk-align-center'));
 
     /**
      * @type {!theEliteGames.models.Game}
