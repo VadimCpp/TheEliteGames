@@ -19,6 +19,7 @@ goog.provide('theEliteGames.App');
 
 goog.require('theEliteGames.elements.Base');
 goog.require('theEliteGames.View');
+goog.require('theEliteGames.GameView');
 
 
 
@@ -34,10 +35,10 @@ theEliteGames.App = function() {
      */
     this.view_ = null;
 
-    ///**
-    // * @type {?theEliteGames.GamePlayView}
-    // */
-    //this.gamePlayView_ = null;
+    /**
+     * @type {?theEliteGames.GameView}
+     */
+    this.gameView_ = null;
 
 };
 goog.inherits(theEliteGames.App, theEliteGames.elements.Base);
@@ -64,13 +65,68 @@ theEliteGames.App.prototype.appendChild = function(elem) {
 
 
 /**
- * @returns {!theEliteGames.models.Game} game
+ * @inheritDoc
+ */
+theEliteGames.App.prototype.removeChild = function(elem) {
+    document.body.removeChild(elem.getMainElement());
+};
+
+
+/**
+ * @param {!theEliteGames.models.Game} game
  * @private
  */
 theEliteGames.App.prototype.onIconClickCallback_ = function(game) {
-    alert('App - display gameplay!');
-    // TODO: implement
-    //this.gamePlayView_ = new heEliteGames.GamePlayView(game);
+    if (!this.gameView_) {
+        /**
+         * @type {theEliteGames.GameView}
+         * @private
+         */
+        this.gameView_ = new theEliteGames.GameView(game);
+        this.gameView_.onClose = this.onCloseCallback_.bind(this);
+        this.appendChild(this.gameView_);
+        this.gameView_.addClassName(goog.getCssName('uk-animation-scale-up'));
+
+        /**
+         * @type {!theEliteGames.App}
+         */
+        var that = this;
+
+        /**
+         * @type {!number}
+         */
+        var timeout = 500; // ms
+
+        setTimeout(function () {
+            that.gameView_.removeClassName(goog.getCssName('uk-animation-scale-up'));
+        }, timeout);
+    }
+};
+
+
+/**
+ * @private
+ */
+theEliteGames.App.prototype.onCloseCallback_ = function() {
+    if (this.gameView_) {
+        this.gameView_.addClassName(goog.getCssName('uk-animation-scale-up'));
+        this.gameView_.addClassName(goog.getCssName('uk-animation-reverse'));
+
+        /**
+         * @type {!theEliteGames.App}
+         */
+        var that = this;
+
+        /**
+         * @type {!number}
+         */
+        var timeout = 500; // ms
+
+        setTimeout(function() {
+            that.removeChild(that.gameView_);
+            that.gameView_ = null;
+        }, timeout);
+    }
 };
 
 

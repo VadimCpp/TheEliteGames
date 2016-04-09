@@ -59,7 +59,7 @@ goog.inherits(theEliteGames.View, theEliteGames.elements.Base);
 
 
 /**
- * @returns {!theEliteGames.models.Game} game
+ * @param {!theEliteGames.models.Game} game
  * @private
  */
 theEliteGames.View.prototype.onIconClickCallback_ = function(game) {
