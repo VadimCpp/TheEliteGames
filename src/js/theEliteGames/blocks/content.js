@@ -58,6 +58,7 @@ theEliteGames.blocks.Content = function() {
 
     for (; i < l; i++) {
         var gameElem = new theEliteGames.elements.Game(this.games_[i]);
+        gameElem.onIconClick = this.onIconClickCallback_.bind(this);
         grid.appendChild(gameElem);
     }
 
@@ -198,3 +199,18 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
         }
     ];
 };
+
+
+/**
+ * @returns {!theEliteGames.models.Game} game
+ * @private
+ */
+theEliteGames.blocks.Content.prototype.onIconClickCallback_ = function(game) {
+    this.onIconClick(game);
+};
+
+
+/**
+ * @type {!function(!theEliteGames.elements.Game)}
+ */
+theEliteGames.blocks.Content.prototype.onIconClick = goog.nullFunction;

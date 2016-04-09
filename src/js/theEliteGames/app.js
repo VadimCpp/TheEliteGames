@@ -33,6 +33,12 @@ theEliteGames.App = function() {
      * @type {?theEliteGames.View}
      */
     this.view_ = null;
+
+    ///**
+    // * @type {?theEliteGames.GamePlayView}
+    // */
+    //this.gamePlayView_ = null;
+
 };
 goog.inherits(theEliteGames.App, theEliteGames.elements.Base);
 
@@ -43,6 +49,7 @@ goog.inherits(theEliteGames.App, theEliteGames.elements.Base);
 theEliteGames.App.prototype.run = function() {
     if (!this.view_) {
         this.view_ = new theEliteGames.View();
+        this.view_.onIconClick = this.onIconClickCallback_.bind(this);
         this.appendChild(this.view_);
     }
 };
@@ -53,6 +60,17 @@ theEliteGames.App.prototype.run = function() {
  */
 theEliteGames.App.prototype.appendChild = function(elem) {
     document.body.appendChild(elem.getMainElement());
+};
+
+
+/**
+ * @returns {!theEliteGames.models.Game} game
+ * @private
+ */
+theEliteGames.App.prototype.onIconClickCallback_ = function(game) {
+    alert('App - display gameplay!');
+    // TODO: implement
+    //this.gamePlayView_ = new heEliteGames.GamePlayView(game);
 };
 
 

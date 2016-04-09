@@ -21,6 +21,7 @@ goog.require('theEliteGames.elements.Base');
 goog.require('theEliteGames.elements.Link');
 goog.require('theEliteGames.models.Game');
 goog.require('theEliteGames.models.StoreIconClass');
+goog.require('goog.events');
 
 
 
@@ -145,6 +146,7 @@ theEliteGames.elements.Game.prototype.getDescriptionBlock_ = function() {
     var iconContainer = new theEliteGames.elements.Base('div');
     iconContainer.addClassName(goog.getCssName('icon-container'));
     iconContainer.appendChild(icon);
+    goog.events.listen(iconContainer.getMainElement(), goog.events.EventType.CLICK, this.onIconClickCallback_, false, this);
 
     /**
      * @type {!theEliteGames.elements.Base}
@@ -227,3 +229,17 @@ theEliteGames.elements.Game.prototype.getStoresBlock_ = function() {
 
     return storesBlock;
 };
+
+
+/**
+ * @private
+ */
+theEliteGames.elements.Game.prototype.onIconClickCallback_ = function(e) {
+    this.onIconClick(this);
+};
+
+
+/**
+ * @type {!function(!theEliteGames.elements.Game)}
+ */
+theEliteGames.elements.Game.prototype.onIconClick = goog.nullFunction;
