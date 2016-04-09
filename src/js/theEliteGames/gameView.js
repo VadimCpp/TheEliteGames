@@ -19,9 +19,7 @@ goog.provide('theEliteGames.GameView');
 
 goog.require('theEliteGames.elements.Base');
 goog.require('theEliteGames.models.Game');
-//goog.require('theEliteGames.blocks.Header');
-//goog.require('theEliteGames.blocks.Footer');
-//goog.require('theEliteGames.blocks.Content');
+goog.require('goog.events');
 
 
 
@@ -40,34 +38,16 @@ theEliteGames.GameView = function(game) {
      */
     this.game_ = game;
 
-    ///**
-    // * @type {!theEliteGames.blocks.Header}
-    // * @private
-    // */
-    //this.header_ = new theEliteGames.blocks.Header();
-    //
-    ///**
-    // * @type {!theEliteGames.blocks.Content}
-    // * @private
-    // */
-    //this.content_ = new theEliteGames.blocks.Content();
-    //this.content_.onIconClick = this.onIconClickCallback_.bind(this);
-    //
-    ///**
-    // * @type {!theEliteGames.blocks.Footer}
-    // * @private
-    // */
-    //this.footer_ = new theEliteGames.blocks.Footer();
-    //
-    //this.appendChild(this.header_);
-    //this.appendChild(this.content_);
-    //this.appendChild(this.footer_);
+    /**
+     * @type {!theEliteGames.elements.Base}
+     * @private
+     */
+    this.link_ = new theEliteGames.elements.Base();
+    this.link_.addClassName(goog.getCssName('img-close'));
+    this.link_.addClassName(goog.getCssName('close'));
+    goog.events.listen(this.link_.getMainElement(), goog.events.EventType.CLICK, this.onCloseCallback_, false, this);
 
-    var that = this;
-    setTimeout(function() {
-        console.log('Close timeout');
-        that.onClose();
-    }, 2000);
+    this.appendChild(this.link_);
 };
 goog.inherits(theEliteGames.GameView, theEliteGames.elements.Base);
 
