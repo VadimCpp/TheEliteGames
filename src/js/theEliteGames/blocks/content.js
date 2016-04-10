@@ -87,7 +87,8 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                 { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/royal-offense-elite-games-ltd/1116824411?ean=2940147147849' },
                 { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000674566' },
                 { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'https://www.ouya.tv/game/Royal-Offense/' }
-            ]
+            ],
+            'youtube' : 'http://www.youtube.com/embed/cKeu1HAKHMg'
         },
         {
             'title' : 'Royal Heroes',
@@ -104,7 +105,8 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                 { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'http://steamcommunity.com/sharedfiles/filedetails/?id=523260275' },
                 { 'iconId' : theEliteGames.models.StoreIconId.STEAM, 'url' : 'http://steamcommunity.com/sharedfiles/filedetails/?id=523260275' },
                 { 'iconId' : theEliteGames.models.StoreIconId.KICKSTARTER, 'url' : 'https://www.kickstarter.com/projects/1198400811/royal-heroes-for-ouya-mac-pc-mobile-and-more' }
-            ]
+            ],
+            'youtube' : 'http://www.youtube.com/embed/zVisYql1zrA'
         },
         {
             'title' : 'Royal Blacksmith',
@@ -112,7 +114,8 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
             'description' : 'Build your own royal Blacksmith. With blackjack and stuff. Soon on every devices.',
             'iconClass' : goog.getCssName('img-icons-bs'),
             'stores' : [
-            ]
+            ],
+            'youtube' : ''
         },
         {
             'title' : 'Mech Defender',
@@ -123,7 +126,8 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
             'stores' : [
                 { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/mechdefender-elite-games/1120177584?ean=2940147213544'  },
                 { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000904283'  }
-            ]
+            ],
+            'youtube' : ''
         },
         {
             'title' : 'Control Craft 2',
@@ -139,7 +143,8 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                 { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/Elite-Games-Ltd-ControlCraft-2/dp/B008A0NU2W/' },
                 { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/controlcraft-2-elite-games/1116423854?ean=2940147144275' },
                 { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000639828' }
-            ]
+            ],
+            'youtube' : ''
         },
         {
             'title' : 'Control Craft 3',
@@ -154,7 +159,8 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                 { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/Cybernate-ControlCraft-3/dp/B00EP4EKZ8/' },
                 { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/controlcraft-3-elite-games-ltd/1117255490?ean=2940147155769' },
                 { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000780150' }
-            ]
+            ],
+            'youtube' : ''
         },
         {
             'title' : 'Merlins Lab',
@@ -167,7 +173,8 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                 { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'https://play.google.com/store/apps/details?id=com.elitegamesltd.merlins' },
                 { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/Elite-Games-Ltd-Merlins-Lab/dp/B00HRCLIA0' },
                 { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/merlins-lab-elitegames-ltd/1118327290?ean=2940147174920' }
-            ]
+            ],
+            'youtube' : ''
         },
         {
             'title' : 'Fly to the Moon!',
@@ -184,7 +191,8 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                 { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/fly-to-the-moon-elite-games-net/1117255487?ean=2940147155745' },
                 { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000639798' },
                 { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'https://www.ouya.tv/game/Fly-to-the-Moon/' }
-            ]
+            ],
+            'youtube' : ''
         },
         {
             'title' : 'Regulator',
@@ -195,7 +203,8 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
             'iconClass' : goog.getCssName('img-icons-r'),
             'stores' : [
                 { 'iconId' : theEliteGames.models.StoreIconId.STEAM, 'url' : 'http://steamcommunity.com/sharedfiles/filedetails/?id=374322738' }
-            ]
+            ],
+            'youtube' : ''
         }
     ];
 };
@@ -211,6 +220,6 @@ theEliteGames.blocks.Content.prototype.onIconClickCallback_ = function(game) {
 
 
 /**
- * @type {!function(!theEliteGames.elements.Game)}
+ * @type {!function(!theEliteGames.models.Game)}
  */
 theEliteGames.blocks.Content.prototype.onIconClick = goog.nullFunction;

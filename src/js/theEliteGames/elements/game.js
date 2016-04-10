@@ -235,11 +235,11 @@ theEliteGames.elements.Game.prototype.getStoresBlock_ = function() {
  * @private
  */
 theEliteGames.elements.Game.prototype.onIconClickCallback_ = function(e) {
-    this.onIconClick(this);
+    this.onIconClick(this.game_);
 };
 
 
 /**
- * @type {!function(!theEliteGames.elements.Game)}
+ * @type {!function(!theEliteGames.models.Game)}
  */
 theEliteGames.elements.Game.prototype.onIconClick = goog.nullFunction;

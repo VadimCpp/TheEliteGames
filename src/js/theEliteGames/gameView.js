@@ -67,7 +67,7 @@ theEliteGames.GameView = function(game) {
      */
     this.video_ = new theEliteGames.elements.Base('iframe');
     this.video_.addClassName(goog.getCssName('the-elite-games-video'));
-    this.video_.setAttribute('src', 'https://www.youtube.com/embed/HPvmHMDWGjg?rel=0');
+    this.video_.setAttribute('src', this.game_['youtube']);
     this.video_.setAttribute('frameborder', '0');
     this.video_.setAttribute('allowfullscreen', 'allowfullscreen');
 

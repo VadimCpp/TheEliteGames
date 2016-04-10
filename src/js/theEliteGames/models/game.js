@@ -20,6 +20,6 @@ goog.provide('theEliteGames.models.Game');
 
 
 /**
- * @typedef {{title: !string, type: !string, description: !string, iconClass: !string, stores: !Array<!number>}}
+ * @typedef {{title: !string, type: !string, description: !string, iconClass: !string, stores: !Array<!number>, youtube: !string}}
  */
 theEliteGames.models.Game;
