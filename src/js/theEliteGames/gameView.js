@@ -71,8 +71,17 @@ theEliteGames.GameView = function(game) {
     this.video_.setAttribute('frameborder', '0');
     this.video_.setAttribute('allowfullscreen', 'allowfullscreen');
 
+    /**
+     * @type {!theEliteGames.elements.Base}
+     * @private
+     */
+    this.description_ = new theEliteGames.elements.Base();
+    this.description_.addClassName(goog.getCssName('the-elite-games-game-description'));
+    this.description_.getMainElement().innerHTML = this.game_['description'];
+
     this.videoContainer_.appendChild(this.video_);
     this.block_.appendChild(this.videoContainer_);
+    this.block_.appendChild(this.description_);
     this.appendChild(this.link_);
     this.appendChild(this.block_);
 };

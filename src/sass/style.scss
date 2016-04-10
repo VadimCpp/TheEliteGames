@@ -303,6 +303,11 @@ div.the-elite-games-game-view {
                 height: 100%;
             }
         }
+        
+        > div.the-elite-games-game-description {
+            margin: 10px;
+            max-width: 640px;
+        }
     }
 }
 
