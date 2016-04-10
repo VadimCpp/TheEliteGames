@@ -44,10 +44,37 @@ theEliteGames.GameView = function(game) {
      */
     this.link_ = new theEliteGames.elements.Base();
     this.link_.addClassName(goog.getCssName('img-close'));
-    this.link_.addClassName(goog.getCssName('close'));
+    this.link_.addClassName(goog.getCssName('the-elite-games-game-close'));
     goog.events.listen(this.link_.getMainElement(), goog.events.EventType.CLICK, this.onCloseCallback_, false, this);
 
+    /**
+     * @type {!theEliteGames.elements.Base}
+     * @private
+     */
+    this.block_ = new theEliteGames.elements.Base();
+    this.block_.addClassName(goog.getCssName('the-elite-games-block'));
+
+    /**
+     * @type {!theEliteGames.elements.Base}
+     * @private
+     */
+    this.videoContainer_ = new theEliteGames.elements.Base();
+    this.videoContainer_.addClassName(goog.getCssName('the-elite-games-video-container'));
+
+    /**
+     * @type {!theEliteGames.elements.Base}
+     * @private
+     */
+    this.video_ = new theEliteGames.elements.Base('iframe');
+    this.video_.addClassName(goog.getCssName('the-elite-games-video'));
+    this.video_.setAttribute('src', 'https://www.youtube.com/embed/HPvmHMDWGjg?rel=0');
+    this.video_.setAttribute('frameborder', '0');
+    this.video_.setAttribute('allowfullscreen', 'allowfullscreen');
+
+    this.videoContainer_.appendChild(this.video_);
+    this.block_.appendChild(this.videoContainer_);
     this.appendChild(this.link_);
+    this.appendChild(this.block_);
 };
 goog.inherits(theEliteGames.GameView, theEliteGames.elements.Base);
 
