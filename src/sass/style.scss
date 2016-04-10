@@ -303,10 +303,23 @@ div.the-elite-games-game-view {
                 height: 100%;
             }
         }
-        
+
         > div.the-elite-games-game-description {
             margin: 10px;
             max-width: 640px;
+        }
+
+        > div.stores-block {
+            text-align: center;
+            padding: 5px;
+            min-height: 53px;
+            > a {
+                > div.store {
+                    display: inline-block;
+                    margin: 3px;
+                    background-size: cover;
+                }
+            }
         }
     }
 }

@@ -79,9 +79,15 @@ theEliteGames.GameView = function(game) {
     this.description_.addClassName(goog.getCssName('the-elite-games-game-description'));
     this.description_.getMainElement().innerHTML = this.game_['description'];
 
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
+    var storeBlock = this.getStoresBlock_();
+
     this.videoContainer_.appendChild(this.video_);
     this.block_.appendChild(this.videoContainer_);
     this.block_.appendChild(this.description_);
+    this.block_.appendChild(storeBlock);
     this.appendChild(this.link_);
     this.appendChild(this.block_);
 };
@@ -100,3 +106,72 @@ theEliteGames.GameView.prototype.onCloseCallback_ = function() {
  * @type {!function()}
  */
 theEliteGames.GameView.prototype.onClose = goog.nullFunction;
+
+
+/**
+ * @return {!theEliteGames.elements.Base}
+ * @private
+ */
+theEliteGames.GameView.prototype.getStoresBlock_ = function() {
+    /**
+     * @type {!theEliteGames.elements.Base}
+     */
+    var storesBlock = new theEliteGames.elements.Base();
+    storesBlock.addClassName(goog.getCssName('stores-block'));
+
+    /**
+     * NOTE! Bracket notation is use because closure compile renames variables.
+     *
+     * More details on a problem:
+     * http://stackoverflow.com/q/36379364/4222953
+     *
+     * @type {!Array<!theEliteGames.models.Store>}
+     */
+    var stores = this.game_['stores'];
+
+    /**
+     * @type {!number}
+     */
+    var i = 0;
+
+    /**
+     * @type {!number}
+     */
+    var l = stores.length;
+
+    for (; i < l; i++) {
+        /**
+         * @type {!theEliteGames.models.Store}
+         */
+        var store = stores[i];
+
+        /**
+         * @type {!string}
+         */
+        var storeClass = theEliteGames.models.StoreIconClass[store['iconId']];
+
+        /**
+         * @type {!theEliteGames.elements.Link}
+         */
+        var storeLink = new theEliteGames.elements.Link(store['url'], '_blank');
+
+        /**
+         * @type {!theEliteGames.elements.Base}
+         */
+        var externalLinkIcon = new theEliteGames.elements.Base();
+        externalLinkIcon.addClassName(goog.getCssName('img-external-link'));
+
+        /**
+         * @type {!theEliteGames.elements.Base}
+         */
+        var storeIcon = new theEliteGames.elements.Base();
+        storeIcon.addClassName(goog.getCssName('store'));
+        storeIcon.addClassName(storeClass);
+
+        storeIcon.appendChild(externalLinkIcon);
+        storeLink.appendChild(storeIcon);
+        storesBlock.appendChild(storeLink);
+    }
+
+    return storesBlock;
+};

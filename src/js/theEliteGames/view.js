@@ -68,6 +68,6 @@ theEliteGames.View.prototype.onIconClickCallback_ = function(game) {
 
 
 /**
- * @type {!function(!theEliteGames.elements.Game)}
+ * @type {!function(!theEliteGames.models.Game)}
  */
 theEliteGames.View.prototype.onIconClick = goog.nullFunction;

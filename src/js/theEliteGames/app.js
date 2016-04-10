@@ -123,8 +123,10 @@ theEliteGames.App.prototype.onCloseCallback_ = function() {
         var timeout = 500; // ms
 
         setTimeout(function() {
-            that.removeChild(that.gameView_);
-            that.gameView_ = null;
+            if (that.gameView_) {
+                that.removeChild(that.gameView_);
+                that.gameView_ = null;
+            }
         }, timeout);
     }
 };

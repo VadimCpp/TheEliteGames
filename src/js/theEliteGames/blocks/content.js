@@ -144,7 +144,7 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                 { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/controlcraft-2-elite-games/1116423854?ean=2940147144275' },
                 { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000639828' }
             ],
-            'youtube' : ''
+            'youtube' : 'http://www.youtube.com/embed/RzlAuS6jVNs'
         },
         {
             'title' : 'Control Craft 3',
@@ -160,7 +160,7 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                 { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/controlcraft-3-elite-games-ltd/1117255490?ean=2940147155769' },
                 { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000780150' }
             ],
-            'youtube' : ''
+            'youtube' : 'http://www.youtube.com/embed/kdeGeHwG-gs'
         },
         {
             'title' : 'Merlins Lab',
@@ -174,7 +174,7 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
                 { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/Elite-Games-Ltd-Merlins-Lab/dp/B00HRCLIA0' },
                 { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/merlins-lab-elitegames-ltd/1118327290?ean=2940147174920' }
             ],
-            'youtube' : ''
+            'youtube' : 'http://www.youtube.com/embed/UBxoG6dD8Jc'
         },
         {
             'title' : 'Fly to the Moon!',
@@ -211,7 +211,7 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
 
 
 /**
- * @returns {!theEliteGames.models.Game} game
+ * @param {!theEliteGames.models.Game} game
  * @private
  */
 theEliteGames.blocks.Content.prototype.onIconClickCallback_ = function(game) {
