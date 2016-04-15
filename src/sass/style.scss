@@ -133,13 +133,6 @@ div.img-external-link {
     opacity: .4;
 }
 
-div.img-player-play {
-    background: url('../img/player-play.png') no-repeat center center;
-    height: 100px;
-    width: 100px;
-    opacity: .4;
-}
-
 div.img-close {
     background: url('../img/close.png');
     height: 48px;
@@ -147,7 +140,6 @@ div.img-close {
 }
 
 
-div.img-player-play:hover,
 div.img-external-link:hover,
 div.img-close:hover {
     cursor: pointer;
@@ -208,6 +200,10 @@ div.the-elite-games-elements-game {
 
                 > div.icon {
                     border-radius: 12px;
+
+                    &:hover {
+                       cursor: pointer;
+                    }
                 }
             }
 

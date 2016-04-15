@@ -129,16 +129,9 @@ theEliteGames.elements.Game.prototype.getDescriptionBlock_ = function() {
     /**
      * @type {!theEliteGames.elements.Base}
      */
-    var playerPlayIcon = new theEliteGames.elements.Base();
-    playerPlayIcon.addClassName(goog.getCssName('img-player-play'));
-
-    /**
-     * @type {!theEliteGames.elements.Base}
-     */
     var icon = new theEliteGames.elements.Base('div');
     icon.addClassName(goog.getCssName('icon'));
     icon.addClassName(this.game_['iconClass']);
-    icon.appendChild(playerPlayIcon);
 
     /**
      * @type {!theEliteGames.elements.Base}
