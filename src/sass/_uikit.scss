@@ -22,13 +22,13 @@
 .uk-container {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    max-width: 780px;
+    max-width: 960px;
     padding: 0 25px;
 }
 
-@media (min-width: 1220px) {
+@media (min-width: 1400px) {
     .uk-container {
-        max-width: 1200px;
+        max-width: 1400px;
         padding: 0 35px;
     }
 }
@@ -125,7 +125,7 @@
     margin-top: 25px;
 }
 /* Large screen and bigger */
-@media (min-width: 1220px) {
+@media (min-width: 1400px) {
     /* Horizontal */
     .uk-grid {
         margin-left: -35px;
@@ -284,7 +284,7 @@
     }
 }
 /* Tablet and bigger */
-@media (min-width: 785px) {
+@media (min-width: 960px) {
     /* Whole */
     .uk-width-medium-1-1 {
         width: 100%;
@@ -351,7 +351,7 @@
     }
 }
 /* Desktop and bigger */
-@media (min-width: 1220px) {
+@media (min-width: 1400px) {
     /* Whole */
     .uk-width-large-1-1 {
         width: 100%;

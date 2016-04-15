@@ -158,7 +158,7 @@ div.img-close:hover {
 div.the-elite-games-elements-game {
 
     margin-bottom: 15px;
-    max-width: 406px;
+    max-width: 445px;
 
     > div.title {
         margin-bottom: 5px;
@@ -200,7 +200,11 @@ div.the-elite-games-elements-game {
             > div.icon-container {
                 padding: 8px 7px;
                 float: left;
-                height: 240px;
+                height: 280px;
+
+                @media (min-width: 480px) {
+                    height: 200px;
+                }
 
                 > div.icon {
                     border-radius: 12px;
@@ -208,9 +212,12 @@ div.the-elite-games-elements-game {
             }
 
             > div.description {
-                height: 240px;
                 padding: 5px;
+                height: 280px;
 
+                @media (min-width: 480px) {
+                    height: 200px;
+                }
             }
         }
 
