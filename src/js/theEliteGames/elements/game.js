@@ -245,7 +245,7 @@ theEliteGames.elements.Game.prototype.getStoresBlock_ = function() {
  * @private
  */
 theEliteGames.elements.Game.prototype.onIconClickCallback_ = function(e) {
-    this.onIconClick(this.game_);
+    this.onIconClick(this.game_, this.stores_);
 };
 
 
@@ -287,6 +287,6 @@ theEliteGames.elements.Game.prototype.getStoreImg_ = function(storeName) {
 
 
 /**
- * @type {!function(!theEliteGames.models.Game)}
+ * @type {!function(!theEliteGames.models.Game, !Array<!theEliteGames.models.Store>)}
  */
 theEliteGames.elements.Game.prototype.onIconClick = goog.nullFunction;

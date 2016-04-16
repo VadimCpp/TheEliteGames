@@ -183,7 +183,7 @@ theEliteGames.blocks.Content.prototype.validateJson_ = function(json) {
         } else if (!json.hasOwnProperty('stores')) {
             errorMessage = ' missing stores property';
         } else {
-
+            
             retVal = true;
         }
 
@@ -194,9 +194,6 @@ theEliteGames.blocks.Content.prototype.validateJson_ = function(json) {
     if (!retVal) {
         console.error('data.json: Validation failed!');
         console.error('data.json: ' + errorMessage);
-    } else {
-        console.log('data.json: data is valid');
-        console.log('data.json: ' + JSON.stringify(json));
     }
 
     return retVal;
@@ -205,14 +202,15 @@ theEliteGames.blocks.Content.prototype.validateJson_ = function(json) {
 
 /**
  * @param {!theEliteGames.models.Game} game
+ * @param {!Array<!theEliteGames.models.Store>} stores
  * @private
  */
-theEliteGames.blocks.Content.prototype.onIconClickCallback_ = function(game) {
-    this.onIconClick(game);
+theEliteGames.blocks.Content.prototype.onIconClickCallback_ = function(game, stores) {
+    this.onIconClick(game, stores);
 };
 
 
 /**
- * @type {!function(!theEliteGames.models.Game)}
+ * @type {!function(!theEliteGames.models.Game, !Array<!theEliteGames.models.Store>)}
  */
 theEliteGames.blocks.Content.prototype.onIconClick = goog.nullFunction;

@@ -60,14 +60,15 @@ goog.inherits(theEliteGames.View, theEliteGames.elements.Base);
 
 /**
  * @param {!theEliteGames.models.Game} game
+ * @param {!Array<!theEliteGames.models.Store>} stores
  * @private
  */
-theEliteGames.View.prototype.onIconClickCallback_ = function(game) {
-    this.onIconClick(game);
+theEliteGames.View.prototype.onIconClickCallback_ = function(game, stores) {
+    this.onIconClick(game, stores);
 };
 
 
 /**
- * @type {!function(!theEliteGames.models.Game)}
+ * @type {!function(!theEliteGames.models.Game, !Array<!theEliteGames.models.Store>)}
  */
 theEliteGames.View.prototype.onIconClick = goog.nullFunction;

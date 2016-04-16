@@ -25,10 +25,11 @@ goog.require('goog.events');
 
 /**
  * @param {!theEliteGames.models.Game} game
+ * @param {!Array<!theEliteGames.models.Store>} stores
  * @constructor
  * @extends {theEliteGames.elements.Base}
  */
-theEliteGames.GameView = function(game) {
+theEliteGames.GameView = function(game, stores) {
     theEliteGames.elements.Base.call(this);
     this.addClassName(goog.getCssName('the-elite-games-game-view'));
 
@@ -37,6 +38,12 @@ theEliteGames.GameView = function(game) {
      * @private
      */
     this.game_ = game;
+
+    /**
+     * @type {!Array<!theEliteGames.models.Store>}
+     * @private
+     */
+    this.stores_ = stores;
 
     /**
      * @type {!theEliteGames.elements.Base}
@@ -125,9 +132,9 @@ theEliteGames.GameView.prototype.getStoresBlock_ = function() {
      * More details on a problem:
      * http://stackoverflow.com/q/36379364/4222953
      *
-     * @type {!Array<!theEliteGames.models.Store>}
+     * @type {!Array<!theEliteGames.models.Link>}
      */
-    var stores = this.game_['stores'];
+    var links = this.game_['links'];
 
     /**
      * @type {!number}
@@ -137,23 +144,28 @@ theEliteGames.GameView.prototype.getStoresBlock_ = function() {
     /**
      * @type {!number}
      */
-    var l = stores.length;
+    var l = links.length;
 
     for (; i < l; i++) {
         /**
-         * @type {!theEliteGames.models.Store}
+         * @type {!theEliteGames.models.Link}
          */
-        var store = stores[i];
+        var link = links[i];
 
-        ///**
-        // * @type {!string}
-        // */
-        //var storeClass = theEliteGames.models.StoreIconClass[store['iconId']];
+        /**
+         * @type {!string}
+         */
+        var storeImg = this.getStoreImg_(link['store']);
+
+        /**
+         * @type {!string}
+         */
+        var backgroundImage = 'background-image: url("../img/stores/' + storeImg + '");';
 
         /**
          * @type {!theEliteGames.elements.Link}
          */
-        var storeLink = new theEliteGames.elements.Link(store['url'], '_blank');
+        var storeLink = new theEliteGames.elements.Link(link['url'], '_blank');
 
         /**
          * @type {!theEliteGames.elements.Base}
@@ -166,7 +178,7 @@ theEliteGames.GameView.prototype.getStoresBlock_ = function() {
          */
         var storeIcon = new theEliteGames.elements.Base();
         storeIcon.addClassName(goog.getCssName('store'));
-        //storeIcon.addClassName(storeClass);
+        storeIcon.setAttribute('style', backgroundImage);
 
         storeIcon.appendChild(externalLinkIcon);
         storeLink.appendChild(storeIcon);
@@ -174,4 +186,41 @@ theEliteGames.GameView.prototype.getStoresBlock_ = function() {
     }
 
     return storesBlock;
+};
+
+
+/**
+ * @param {!string} storeName
+ * @private
+ */
+theEliteGames.GameView.prototype.getStoreImg_ = function(storeName) {
+
+    /**
+     * @type {!string}
+     */
+    var retVal = '';
+
+    /**
+     * @type {!number}
+     */
+    var i = 0;
+
+    /**
+     * @type {!number}
+     */
+    var l = this.stores_.length;
+
+    for(; i < l; i++) {
+        /**
+         * @type {!theEliteGames.models.Store}
+         */
+        var store = this.stores_[i];
+
+        if (store['name'] === storeName) {
+            retVal = store['icon'];
+            i = l;
+        }
+    }
+
+    return retVal;
 };

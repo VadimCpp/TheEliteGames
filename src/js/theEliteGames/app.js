@@ -74,15 +74,16 @@ theEliteGames.App.prototype.removeChild = function(elem) {
 
 /**
  * @param {!theEliteGames.models.Game} game
+ * @param {!Array<!theEliteGames.models.Store>} stores
  * @private
  */
-theEliteGames.App.prototype.onIconClickCallback_ = function(game) {
+theEliteGames.App.prototype.onIconClickCallback_ = function(game, stores) {
     if (!this.gameView_) {
         /**
          * @type {theEliteGames.GameView}
          * @private
          */
-        this.gameView_ = new theEliteGames.GameView(game);
+        this.gameView_ = new theEliteGames.GameView(game, stores);
         this.gameView_.onClose = this.onCloseCallback_.bind(this);
         this.appendChild(this.gameView_);
         this.gameView_.addClassName(goog.getCssName('uk-animation-scale-up'));
