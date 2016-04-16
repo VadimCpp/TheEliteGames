@@ -17,10 +17,13 @@
 
 goog.provide('theEliteGames.blocks.Content');
 
+goog.require('goog.net.XhrIo');
 goog.require('theEliteGames.elements.Base');
 goog.require('theEliteGames.elements.Game');
+goog.require('theEliteGames.models.Data');
 goog.require('theEliteGames.models.Game');
-goog.require('theEliteGames.models.StoreIconId');
+goog.require('theEliteGames.models.Store');
+goog.require('theEliteGames.models.Link');
 
 
 
@@ -35,16 +38,104 @@ theEliteGames.blocks.Content = function() {
     this.addClassName(goog.getCssName('uk-container-center'));
 
     /**
+     * @type {!goog.net.XhrIo}
+     * @private
+     */
+    this.xhr_ = new goog.net.XhrIo();
+    goog.events.listen(this.xhr_, goog.net.EventType.COMPLETE, this.onRequestComplete_.bind(this));
+
+    this.getGames_();
+
+};
+goog.inherits(theEliteGames.blocks.Content, theEliteGames.elements.Base);
+
+
+/**
+ * @private
+ */
+theEliteGames.blocks.Content.prototype.getGames_ = function() {
+
+    /**
+     * @type {!string}
+     */
+    var DATA_FILE = 'data/data.json';
+
+    /**
+     * NOTE! Add a delay to show user cool animation.
+     *
+     * @type {!number}
+     */
+    var TIMEOUT = 1000;
+
+    /**
+     * @type {!theEliteGames.blocks.Content}
+     */
+    var that = this;
+    setTimeout(function() {
+        that.xhr_.send(DATA_FILE);
+    } , TIMEOUT);
+};
+
+
+/**
+ * @private
+ */
+theEliteGames.blocks.Content.prototype.onRequestComplete_ = function() {
+    /**
+     * @type {!number}
+     */
+    var status = this.xhr_.getStatus();
+
+    if (status !== 200) {
+        console.error('Bad status code (' + status + ')');
+
+        // TODO: display error message
+
+    } else {
+        /**
+         * @type {?Object|undefined}
+         */
+        var responseJson = this.xhr_.getResponseJson();
+
+        if (this.validateJson_(responseJson)) {
+
+            /**
+             * @type {!theEliteGames.models.Data}
+             */
+            var data = /** @type {!theEliteGames.models.Data} */ (responseJson);
+
+            this.loadData_(data);
+
+        } else {
+
+            console.error('Cannot display games :(');
+
+        }
+    }
+};
+
+
+/**
+ * @param {!theEliteGames.models.Data} data
+ * @private
+ */
+theEliteGames.blocks.Content.prototype.loadData_ = function(data) {
+
+    /**
+     * @type {!Array}
+     */
+    var games = data['games'];
+
+    /**
+     * @type {!Array}
+     */
+    var stores = data['stores'];
+
+    /**
      * @type {!theEliteGames.elements.Base}
      */
     var grid = new theEliteGames.elements.Base();
     grid.addClassName(goog.getCssName('uk-grid'));
-
-    /**
-     * @type {!Array<!theEliteGames.models.Game>}
-     * @private
-     */
-    this.games_ = this.getGames_();
 
     /**
      * @type {!number}
@@ -54,159 +145,61 @@ theEliteGames.blocks.Content = function() {
     /**
      * @type {!number}
      */
-    var l = this.games_.length;
+    var l = games.length;
 
     for (; i < l; i++) {
-        var gameElem = new theEliteGames.elements.Game(this.games_[i]);
+        var gameElem = new theEliteGames.elements.Game(games[i], stores);
         gameElem.onIconClick = this.onIconClickCallback_.bind(this);
         grid.appendChild(gameElem);
     }
 
     this.appendChild(grid);
+
 };
-goog.inherits(theEliteGames.blocks.Content, theEliteGames.elements.Base);
 
 
 /**
- * @returns {!Array<!theEliteGames.models.Game>}
+ * @param {?Object|undefined} json
+ * @return {!boolean}
  * @private
  */
-theEliteGames.blocks.Content.prototype.getGames_ = function() {
-    return [
-        {
-            'title' : 'Royal Offense',
-            'type' : 'STRATEGY',
-            'description' : 'Royal Offense contains elements of role play: while fulfilling your orders, the heroes ' +
-                            'improve their skills and talents, as well as earn cash to be spent on new equipment, we' +
-                            'apons, and magical elixirs.',
-            'iconClass' : goog.getCssName('img-icons-ro'),
-            'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'https://play.google.com/store/apps/details?id=com.elitegamesltd.royaloffense' },
-                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'https://itunes.apple.com/app/royal-offense/id659970011?mt=8' },
-                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/Elite-Games-Ltd-Royal-Offense/dp/B00EP3BGWY/' },
-                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/royal-offense-elite-games-ltd/1116824411?ean=2940147147849' },
-                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000674566' },
-                { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'https://www.ouya.tv/game/Royal-Offense/' }
-            ],
-            'youtube' : 'http://www.youtube.com/embed/cKeu1HAKHMg'
-        },
-        {
-            'title' : 'Royal Heroes',
-            'type' : 'STRATEGY',
-            'description' : 'A land plagued by black magic and creatures that crawl out of the darkness. Once this w' +
-                            'as a great kingdom. It could be great again. Hire an army of legendary heroes and battl' +
-                            'e vast waves of monsters.',
-            'iconClass' : goog.getCssName('img-icons-rh'),
-            'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'https://play.google.com/store/apps/details?id=com.elitegamesltd.royalheroes' },
-                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'http://itunes.apple.com/app/id985595486?mt=8&uo=4&at=11l5Y9' },
-                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/dp/B017ODZ9GU/' },
-                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'https://www.ouya.tv/game/Royal-Heroes/' },
-                { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'http://steamcommunity.com/sharedfiles/filedetails/?id=523260275' },
-                { 'iconId' : theEliteGames.models.StoreIconId.STEAM, 'url' : 'http://steamcommunity.com/sharedfiles/filedetails/?id=523260275' },
-                { 'iconId' : theEliteGames.models.StoreIconId.KICKSTARTER, 'url' : 'https://www.kickstarter.com/projects/1198400811/royal-heroes-for-ouya-mac-pc-mobile-and-more' }
-            ],
-            'youtube' : 'http://www.youtube.com/embed/zVisYql1zrA'
-        },
-        {
-            'title' : 'Royal Blacksmith',
-            'type' : 'SIM',
-            'description' : 'Build your own royal Blacksmith. With blackjack and stuff. Soon on every devices.',
-            'iconClass' : goog.getCssName('img-icons-bs'),
-            'stores' : [
-            ],
-            'youtube' : ''
-        },
-        {
-            'title' : 'Mech Defender',
-            'type' : 'STRATEGY',
-            'description' : 'Pilot a Mech to defend your home from zombies. MechDefender is a next chapter in Hero T' +
-                            'ower Defense series. With Tower and Weapons and new tricky maps.',
-            'iconClass' : goog.getCssName('img-icons-md'),
-            'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/mechdefender-elite-games/1120177584?ean=2940147213544'  },
-                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000904283'  }
-            ],
-            'youtube' : ''
-        },
-        {
-            'title' : 'Control Craft 2',
-            'type' : 'STRATEGY',
-            'description' : 'A fast thinking RTS game, with tactic capabilities and graphics in unique style. Take o' +
-                            'ver the enemy colonies to battle your way through challenging levels that call for your' +
-                            ' skill and wit. Upgrade your troop, pimp up your super weapons and smash enemies to sav' +
-                            'e your Planet.',
-            'iconClass' : goog.getCssName('img-icons-cc2'),
-            'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'https://itunes.apple.com/app/controlcraft-2/id531648566?mt=8' },
-                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'https://play.google.com/store/apps/details?id=com.elitegamesltd.cc2' },
-                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/Elite-Games-Ltd-ControlCraft-2/dp/B008A0NU2W/' },
-                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/controlcraft-2-elite-games/1116423854?ean=2940147144275' },
-                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000639828' }
-            ],
-            'youtube' : 'http://www.youtube.com/embed/RzlAuS6jVNs'
-        },
-        {
-            'title' : 'Control Craft 3',
-            'type' : 'STRATEGY',
-            'description' : 'Command your troops to attack enemy control points. Utilize a wide range of troops and ' +
-                            'tactical abilities. During the heat of the battle, tactical decisions of when, where an' +
-                            'd how to attack will win or lose you the war.',
-            'iconClass' : goog.getCssName('img-icons-cc3'),
-            'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'https://itunes.apple.com/app/controlcraft-3/id670524067?mt=8' },
-                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'https://play.google.com/store/apps/details?id=com.elitegamesltd.cc3' },
-                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/Cybernate-ControlCraft-3/dp/B00EP4EKZ8/' },
-                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/controlcraft-3-elite-games-ltd/1117255490?ean=2940147155769' },
-                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000780150' }
-            ],
-            'youtube' : 'http://www.youtube.com/embed/kdeGeHwG-gs'
-        },
-        {
-            'title' : 'Merlins Lab',
-            'type' : 'PUZZLE',
-            'description' : 'Merlins Lab is an puzzle game in which you try to find the philosopher' + "'" + 's ston' +
-                            'e. The closer you to final aim, the more points you score.',
-            'iconClass' : goog.getCssName('img-icons-ml'),
-            'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'https://itunes.apple.com/us/app/merlins-lab/id740544214?mt=8' },
-                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'https://play.google.com/store/apps/details?id=com.elitegamesltd.merlins' },
-                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/Elite-Games-Ltd-Merlins-Lab/dp/B00HRCLIA0' },
-                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/merlins-lab-elitegames-ltd/1118327290?ean=2940147174920' }
-            ],
-            'youtube' : 'http://www.youtube.com/embed/UBxoG6dD8Jc'
-        },
-        {
-            'title' : 'Fly to the Moon!',
-            'type' : 'ARCADE',
-            'description' : 'One step at a time, your space program is taking off. Use the money earned from each la' +
-                            'unch to upgrade your rocket. Grab all the powerups and fuel you can while heading for t' +
-                            'he stratosphere. Avoid colliding with blimps, balloons and UFOs - they hurt! How fast c' +
-                            'an you get to the moon?',
-            'iconClass' : goog.getCssName('img-icons-mn'),
-            'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.APPLE, 'url' : 'https://itunes.apple.com/app/fly-to-the-moon!/id534274992?mt=8' },
-                { 'iconId' : theEliteGames.models.StoreIconId.GOOGLE, 'url' : 'https://play.google.com/store/apps/details?id=com.elitegamesltd.tomoon' },
-                { 'iconId' : theEliteGames.models.StoreIconId.AMAZON, 'url' : 'http://www.amazon.com/Elite-Games-Ltd-Fly-Moon/dp/B00FGXYZZ2/' },
-                { 'iconId' : theEliteGames.models.StoreIconId.NOOK, 'url' : 'http://www.barnesandnoble.com/w/fly-to-the-moon-elite-games-net/1117255487?ean=2940147155745' },
-                { 'iconId' : theEliteGames.models.StoreIconId.SAMSUNG, 'url' : 'http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000639798' },
-                { 'iconId' : theEliteGames.models.StoreIconId.OUYA, 'url' : 'https://www.ouya.tv/game/Fly-to-the-Moon/' }
-            ],
-            'youtube' : ''
-        },
-        {
-            'title' : 'Regulator',
-            'type' : 'PLATFOMER',
-            'description' : '"Regulator" - an action/platformer in the style of metroidvania. The player searches th' +
-                            'rough an underground base for world' + "'" + 's most dangerous terrorist leader, and it' +
-                            's definitely not to reward him with candies and hugs.',
-            'iconClass' : goog.getCssName('img-icons-r'),
-            'stores' : [
-                { 'iconId' : theEliteGames.models.StoreIconId.STEAM, 'url' : 'http://steamcommunity.com/sharedfiles/filedetails/?id=374322738' }
-            ],
-            'youtube' : ''
+theEliteGames.blocks.Content.prototype.validateJson_ = function(json) {
+    /**
+     * @type {!boolean}
+     */
+    var retVal = false;
+
+    /**
+     * @type {!string}
+     */
+    var errorMessage = '';
+
+    if (json === null || json === undefined) {
+        errorMessage = 'null returned. Object expected.';
+    } else if (json instanceof Object) {
+
+        if (!json.hasOwnProperty('games')) {
+            errorMessage = ' missing games property';
+        } else if (!json.hasOwnProperty('stores')) {
+            errorMessage = ' missing stores property';
+        } else {
+
+            retVal = true;
         }
-    ];
+
+    } else {
+        errorMessage =  json.prototype.toString() + 'returned. Object expected.';
+    }
+
+    if (!retVal) {
+        console.error('data.json: Validation failed!');
+        console.error('data.json: ' + errorMessage);
+    } else {
+        console.log('data.json: data is valid');
+        console.log('data.json: ' + JSON.stringify(json));
+    }
+
+    return retVal;
 };
 
 

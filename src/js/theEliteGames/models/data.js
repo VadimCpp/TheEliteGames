@@ -15,20 +15,11 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-goog.provide('theEliteGames.models.StoreIconClass');
+goog.provide('theEliteGames.models.Data');
 
 
 
 /**
- * @type {!Array<!string>}
+ * @typedef {{games: !Array, stores: !Array<!theEliteGames.models.Store>}}
  */
-theEliteGames.models.StoreIconClass = [
-    goog.getCssName('img-stores-amazon'), // AMAZON
-    goog.getCssName('img-stores-apple'), // APPLE
-    goog.getCssName('img-stores-google'), // GOOGLE
-    goog.getCssName('img-stores-kickstarter'), // KICKSTARTER
-    goog.getCssName('img-stores-nook'), // NOOK
-    goog.getCssName('img-stores-ouya'), // OUYA
-    goog.getCssName('img-stores-samsung'), // SAMSUNG
-    goog.getCssName('img-stores-steam') // STEAM
-];
+theEliteGames.models.Data;

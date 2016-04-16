@@ -145,10 +145,10 @@ theEliteGames.GameView.prototype.getStoresBlock_ = function() {
          */
         var store = stores[i];
 
-        /**
-         * @type {!string}
-         */
-        var storeClass = theEliteGames.models.StoreIconClass[store['iconId']];
+        ///**
+        // * @type {!string}
+        // */
+        //var storeClass = theEliteGames.models.StoreIconClass[store['iconId']];
 
         /**
          * @type {!theEliteGames.elements.Link}
@@ -166,7 +166,7 @@ theEliteGames.GameView.prototype.getStoresBlock_ = function() {
          */
         var storeIcon = new theEliteGames.elements.Base();
         storeIcon.addClassName(goog.getCssName('store'));
-        storeIcon.addClassName(storeClass);
+        //storeIcon.addClassName(storeClass);
 
         storeIcon.appendChild(externalLinkIcon);
         storeLink.appendChild(storeIcon);

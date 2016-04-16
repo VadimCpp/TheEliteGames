@@ -19,8 +19,8 @@ gulp.task('js', function() {
                 fileName: 'app.js',
                 compilerFlags: {
                     closure_entry_point: 'theEliteGames.App',
-                    compilation_level: 'ADVANCED_OPTIMIZATIONS',
-                    //compilation_level: 'WHITESPACE_ONLY',
+                    //compilation_level: 'ADVANCED_OPTIMIZATIONS',
+                    compilation_level: 'WHITESPACE_ONLY',
                     only_closure_dependencies: true,
                     warning_level: 'VERBOSE'
                 }
@@ -40,6 +40,12 @@ gulp.task('del', function () {
 gulp.task('html', function() {
     return gulp.src('src/index.html')
         .pipe(gulp.dest('dist'));
+});
+
+
+gulp.task('data', function() {
+    return gulp.src('src/data/data.json')
+        .pipe(gulp.dest('dist/data'));
 });
 
 
@@ -63,12 +69,13 @@ gulp.task('img', function() {
 
 
 gulp.task('build', function(callback) {
-    runSequence('del', 'html', 'sass', 'img', 'js', callback);
+    runSequence('del', 'html', 'data', 'sass', 'img', 'js', callback);
 });
 
 
 gulp.task('watch', function() {
     gulp.watch('src/src/index.html', ['html']);
+    gulp.watch('src/src/data/data.json', ['data']);
     gulp.watch('src/sass/*.scss', ['sass']);
     gulp.watch('src/js/theEliteGames/**/*.js', ['build']);
 });

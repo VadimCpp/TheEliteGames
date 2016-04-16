@@ -20,18 +20,19 @@ goog.provide('theEliteGames.elements.Game');
 goog.require('theEliteGames.elements.Base');
 goog.require('theEliteGames.elements.Link');
 goog.require('theEliteGames.models.Game');
-goog.require('theEliteGames.models.StoreIconClass');
+goog.require('theEliteGames.models.Store');
 goog.require('goog.events');
 
 
 
 /**
  * @param {!theEliteGames.models.Game} game
+ * @param {!Array<!theEliteGames.models.Store>} stores
  *
  * @constructor
  * @extends {theEliteGames.elements.Base}
  */
-theEliteGames.elements.Game = function(game) {
+theEliteGames.elements.Game = function(game, stores) {
     theEliteGames.elements.Base.call(this);
     this.addClassName(goog.getCssName('the-elite-games-elements-game'));
     this.addClassName(goog.getCssName('uk-width-small-1-1'));
@@ -44,6 +45,12 @@ theEliteGames.elements.Game = function(game) {
      * @private
      */
     this.game_ = game;
+
+    /**
+     * @type {!Array<!theEliteGames.models.Store>}
+     * @private
+     */
+    this.stores_ = stores;
 
     /**
      * @type {!theEliteGames.elements.Base}
@@ -72,7 +79,7 @@ theEliteGames.elements.Game.prototype.getTitle_ = function() {
      */
     var title = new theEliteGames.elements.Base('div');
     title.addClassName(goog.getCssName('title'));
-    title.getMainElement().innerHTML = this.game_.title;
+    title.getMainElement().innerHTML = this.game_['name'];
 
     return title;
 };
@@ -94,7 +101,7 @@ theEliteGames.elements.Game.prototype.getDetails_ = function() {
      */
     var gameType = new theEliteGames.elements.Base('div');
     gameType.addClassName(goog.getCssName('game-type'));
-    gameType.getMainElement().innerHTML = this.game_.type;
+    gameType.getMainElement().innerHTML = this.game_['type'];
 
     /**
      * @type {!theEliteGames.elements.Base}
@@ -127,11 +134,16 @@ theEliteGames.elements.Game.prototype.getDescriptionBlock_ = function() {
     descriptionBlock.addClassName(goog.getCssName('description-block'));
 
     /**
+     * @type {!string}
+     */
+    var background = 'background: url("../img/icons/' + this.game_['icon'] + '");';
+
+    /**
      * @type {!theEliteGames.elements.Base}
      */
     var icon = new theEliteGames.elements.Base('div');
     icon.addClassName(goog.getCssName('icon'));
-    icon.addClassName(this.game_['iconClass']);
+    icon.setAttribute('style', background);
 
     /**
      * @type {!theEliteGames.elements.Base}
@@ -146,7 +158,7 @@ theEliteGames.elements.Game.prototype.getDescriptionBlock_ = function() {
      */
     var description = new theEliteGames.elements.Base('div');
     description.addClassName(goog.getCssName('description'));
-    description.getMainElement().innerHTML = this.game_.description;
+    description.getMainElement().innerHTML = this.game_['description'];
 
     descriptionBlock.appendChild(iconContainer);
     descriptionBlock.appendChild(description);
@@ -172,9 +184,9 @@ theEliteGames.elements.Game.prototype.getStoresBlock_ = function() {
      * More details on a problem:
      * http://stackoverflow.com/q/36379364/4222953
      *
-     * @type {!Array<!theEliteGames.models.Store>}
+     * @type {!Array<!theEliteGames.models.Link>}
      */
-    var stores = this.game_['stores'];
+    var links = this.game_['links'];
 
     /**
      * @type {!number}
@@ -184,23 +196,28 @@ theEliteGames.elements.Game.prototype.getStoresBlock_ = function() {
     /**
      * @type {!number}
      */
-    var l = stores.length;
+    var l = links.length;
 
     for (; i < l; i++) {
         /**
-         * @type {!theEliteGames.models.Store}
+         * @type {!theEliteGames.models.Link}
          */
-        var store = stores[i];
+        var link = links[i];
 
         /**
          * @type {!string}
          */
-        var storeClass = theEliteGames.models.StoreIconClass[store['iconId']];
+        var storeImg = this.getStoreImg_(link['store']);
+
+        /**
+         * @type {!string}
+         */
+        var backgroundImage = 'background-image: url("../img/stores/' + storeImg + '");';
 
         /**
          * @type {!theEliteGames.elements.Link}
          */
-        var storeLink = new theEliteGames.elements.Link(store['url'], '_blank');
+        var storeLink = new theEliteGames.elements.Link(link['url'], '_blank');
 
         /**
          * @type {!theEliteGames.elements.Base}
@@ -213,7 +230,7 @@ theEliteGames.elements.Game.prototype.getStoresBlock_ = function() {
          */
         var storeIcon = new theEliteGames.elements.Base();
         storeIcon.addClassName(goog.getCssName('store'));
-        storeIcon.addClassName(storeClass);
+        storeIcon.setAttribute('style', backgroundImage);
 
         storeIcon.appendChild(externalLinkIcon);
         storeLink.appendChild(storeIcon);
@@ -229,6 +246,43 @@ theEliteGames.elements.Game.prototype.getStoresBlock_ = function() {
  */
 theEliteGames.elements.Game.prototype.onIconClickCallback_ = function(e) {
     this.onIconClick(this.game_);
+};
+
+
+/**
+ * @param {!string} storeName
+ * @private
+ */
+theEliteGames.elements.Game.prototype.getStoreImg_ = function(storeName) {
+
+    /**
+     * @type {!string}
+     */
+    var retVal = '';
+
+    /**
+     * @type {!number}
+     */
+    var i = 0;
+
+    /**
+     * @type {!number}
+     */
+    var l = this.stores_.length;
+
+    for(; i < l; i++) {
+        /**
+         * @type {!theEliteGames.models.Store}
+         */
+        var store = this.stores_[i];
+
+        if (store['name'] === storeName) {
+            retVal = store['icon'];
+            i = l;
+        }
+    }
+
+    return retVal;
 };
 
 

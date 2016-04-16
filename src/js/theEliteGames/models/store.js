@@ -20,6 +20,6 @@ goog.provide('theEliteGames.models.Store');
 
 
 /**
- * @typedef {{iconId: !theEliteGames.models.StoreIconId, url: !string}}
+ * @typedef {{name: !string, icon: !string}}
  */
 theEliteGames.models.Store;
