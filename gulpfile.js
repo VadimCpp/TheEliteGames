@@ -43,6 +43,12 @@ gulp.task('html', function() {
 });
 
 
+gulp.task('favicon', function() {
+    return gulp.src('src/favicon.ico')
+        .pipe(gulp.dest('dist'));
+});
+
+
 gulp.task('data', function() {
     return gulp.src('src/data/data.json')
         .pipe(gulp.dest('dist/data'));
@@ -69,7 +75,7 @@ gulp.task('img', function() {
 
 
 gulp.task('build', function(callback) {
-    runSequence('del', 'html', 'data', 'sass', 'img', 'js', callback);
+    runSequence('del', 'html', 'favicon', 'data', 'sass', 'img', 'js', callback);
 });
 
 
