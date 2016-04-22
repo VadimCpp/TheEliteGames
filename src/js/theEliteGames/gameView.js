@@ -74,7 +74,7 @@ theEliteGames.GameView = function(game, stores) {
      */
     this.video_ = new theEliteGames.elements.Base('iframe');
     this.video_.addClassName(goog.getCssName('the-elite-games-video'));
-    this.video_.setAttribute('src', this.game_['youtube']);
+    this.video_.setAttribute('src', this.game_.youtube ? this.game_.youtube : '');
     this.video_.setAttribute('frameborder', '0');
     this.video_.setAttribute('allowfullscreen', 'allowfullscreen');
 
@@ -84,7 +84,7 @@ theEliteGames.GameView = function(game, stores) {
      */
     this.description_ = new theEliteGames.elements.Base();
     this.description_.addClassName(goog.getCssName('the-elite-games-game-description'));
-    this.description_.getMainElement().innerHTML = this.game_['description'];
+    this.description_.getMainElement().innerHTML = this.game_.description;
 
     /**
      * @type {!theEliteGames.elements.Base}
@@ -127,14 +127,9 @@ theEliteGames.GameView.prototype.getStoresBlock_ = function() {
     storesBlock.addClassName(goog.getCssName('stores-block'));
 
     /**
-     * NOTE! Bracket notation is use because closure compile renames variables.
-     *
-     * More details on a problem:
-     * http://stackoverflow.com/q/36379364/4222953
-     *
      * @type {!Array<!theEliteGames.models.Link>}
      */
-    var links = this.game_['links'];
+    var links = this.game_.links;
 
     /**
      * @type {!number}
@@ -155,7 +150,7 @@ theEliteGames.GameView.prototype.getStoresBlock_ = function() {
         /**
          * @type {!string}
          */
-        var storeImg = this.getStoreImg_(link['store']);
+        var storeImg = this.getStoreImg_(link.store);
 
         /**
          * @type {!string}
@@ -165,7 +160,7 @@ theEliteGames.GameView.prototype.getStoresBlock_ = function() {
         /**
          * @type {!theEliteGames.elements.Link}
          */
-        var storeLink = new theEliteGames.elements.Link(link['url'], '_blank');
+        var storeLink = new theEliteGames.elements.Link(link.url, '_blank');
 
         /**
          * @type {!theEliteGames.elements.Base}
@@ -216,8 +211,8 @@ theEliteGames.GameView.prototype.getStoreImg_ = function(storeName) {
          */
         var store = this.stores_[i];
 
-        if (store['name'] === storeName) {
-            retVal = store['icon'];
+        if (store.name === storeName) {
+            retVal = store.icon;
             i = l;
         }
     }

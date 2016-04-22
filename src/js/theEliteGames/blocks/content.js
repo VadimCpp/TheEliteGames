@@ -129,14 +129,14 @@ theEliteGames.blocks.Content.prototype.onRequestComplete_ = function() {
 theEliteGames.blocks.Content.prototype.loadData_ = function(data) {
 
     /**
-     * @type {!Array}
+     * @type {!Array<!theEliteGames.models.Game>}
      */
-    var games = data['games'];
+    var games = data.games;
 
     /**
-     * @type {!Array}
+\     * @type {!Array<!theEliteGames.models.Store>}
      */
-    var stores = data['stores'];
+    var stores = data.stores;
 
     /**
      * @type {!theEliteGames.elements.Base}

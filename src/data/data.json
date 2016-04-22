@@ -114,7 +114,8 @@
       "icon" : "r.png",
       "links" : [
           { "store" : "Steam", "url" : "http://steamcommunity.com/sharedfiles/filedetails/?id=374322738" }
-      ]
+      ],
+      "youtube" : "https://www.youtube.com/embed/m0gX5uhPs2Y"
     }
   ],
 

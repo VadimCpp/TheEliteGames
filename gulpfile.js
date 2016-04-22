@@ -19,8 +19,8 @@ gulp.task('js', function() {
                 fileName: 'app.js',
                 compilerFlags: {
                     closure_entry_point: 'theEliteGames.App',
-                    //compilation_level: 'ADVANCED_OPTIMIZATIONS',
-                    compilation_level: 'WHITESPACE_ONLY',
+                    compilation_level: 'ADVANCED_OPTIMIZATIONS',
+                    //compilation_level: 'WHITESPACE_ONLY',
                     only_closure_dependencies: true,
                     warning_level: 'VERBOSE'
                 }
