@@ -38,6 +38,7 @@
       "youtube" : "",
       "description" : "Build your own royal Blacksmith. With blackjack and stuff. Soon on every devices.",
       "links" : [
+        { "store" : "App Store",    "url" : "javascript:alert('Not yet');"  }
       ]
     },
     {
@@ -69,6 +70,7 @@
       "name" : "Control Craft 3",
       "type" : "STRATEGY",
       "icon" : "cc3.png",
+      "description" : "Command your troops to attack enemy control points. Utilize a wide range of troops and tactical abilities. During the heat of the battle, tactical decisions of when, where and how to attack will win or lose you the war.",
       "links" : [
         { "store" : "App Store",   "url" : "https://itunes.apple.com/app/controlcraft-3/id670524067?mt=8" },
         { "store" : "Google Play", "url" : "https://play.google.com/store/apps/details?id=com.elitegamesltd.cc3" },
@@ -103,8 +105,7 @@
         { "store" : "Nook",        "url" : "http://www.barnesandnoble.com/w/fly-to-the-moon-elite-games-net/1117255487?ean=2940147155745" },
         { "store" : "Samsung",     "url" : "http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000639798" },
         { "store" : "Ouya",        "url" : "https://www.ouya.tv/game/Fly-to-the-Moon/" }
-      ],
-      "youtube" : ""
+      ]
     },
     {
       "name" : "Regulator",
@@ -113,8 +114,7 @@
       "icon" : "r.png",
       "links" : [
           { "store" : "Steam", "url" : "http://steamcommunity.com/sharedfiles/filedetails/?id=374322738" }
-      ],
-      "youtube" : ""
+      ]
     }
   ],
 

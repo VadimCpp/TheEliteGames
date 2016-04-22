@@ -19,7 +19,23 @@ goog.provide('theEliteGames.models.Link');
 
 
 
+
 /**
- * @typedef {{store: !string, url: !string}}
+ * @constructor
+ * @public
  */
-theEliteGames.models.Link;
+theEliteGames.models.Link = function() {
+
+    /**
+     * @type {!string}
+     * @public
+     */
+    this.store = '';
+
+    /**
+     * @type {!string}
+     * @public
+     */
+    this.url = '';
+
+};

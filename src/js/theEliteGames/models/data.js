@@ -20,6 +20,21 @@ goog.provide('theEliteGames.models.Data');
 
 
 /**
- * @typedef {{games: !Array, stores: !Array<!theEliteGames.models.Store>}}
+ * @constructor
+ * @public
  */
-theEliteGames.models.Data;
+theEliteGames.models.Data = function() {
+
+    /**
+     * @type {!Array<!theEliteGames.models.Game>}
+     * @public
+     */
+    this.games = [];
+
+    /**
+     * @type {!Array<!theEliteGames.models.Store>}
+     * @public
+     */
+    this.stores = [];
+
+};

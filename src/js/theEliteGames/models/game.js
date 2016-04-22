@@ -20,6 +20,51 @@ goog.provide('theEliteGames.models.Game');
 
 
 /**
- * @typedef {{name: !string, type: !string, icon: !string, youtube: !string, description: !string, links: !Array<theEliteGames.models.Link>}}
+ * @constructor
+ * @public
  */
-theEliteGames.models.Game;
+theEliteGames.models.Game = function() {
+
+    /**
+     * @type {!string}
+     * @public
+     */
+    this.name = '';
+
+    /**
+     * @type {!string}
+     * @public
+     */
+    this.type = '';
+
+    /**
+     * @type {!string}
+     * @public
+     */
+    this.icon = '';
+
+    /**
+     * @type {!string|undefined}
+     * @public
+     */
+    this.youtube = undefined;
+
+    /**
+     * @type {!string|undefined}
+     * @public
+     */
+    this.gameplayImage = undefined;
+
+    /**
+     * @type {!string}
+     * @public
+     */
+    this.description = '';
+
+    /**
+     * @type {!Array<!theEliteGames.models.Link>}
+     * @public
+     */
+    this.links = [];
+
+};

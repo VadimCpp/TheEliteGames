@@ -97,14 +97,21 @@ theEliteGames.blocks.Content.prototype.onRequestComplete_ = function() {
          */
         var responseJson = this.xhr_.getResponseJson();
 
-        if (this.validateJson_(responseJson)) {
+        if (responseJson) {
 
             /**
-             * @type {!theEliteGames.models.Data}
+             * @type {?theEliteGames.models.Data}
              */
-            var data = /** @type {!theEliteGames.models.Data} */ (responseJson);
+            var data = this.validateJsonData_(responseJson);
 
-            this.loadData_(data);
+            console.warn(JSON.stringify(data));
+
+            if (data) {
+                this.loadData_(data);
+            } else {
+                // TODO: display error dialogue.
+                console.error('TODO: display error dialogue');
+            }
 
         } else {
 
@@ -160,43 +167,418 @@ theEliteGames.blocks.Content.prototype.loadData_ = function(data) {
 
 /**
  * @param {?Object|undefined} json
- * @return {!boolean}
+ * @return {?theEliteGames.models.Data}
  * @private
  */
-theEliteGames.blocks.Content.prototype.validateJson_ = function(json) {
+theEliteGames.blocks.Content.prototype.validateJsonData_ = function(json) {
+    console.log('Content - validateJsonData_');
     /**
-     * @type {!boolean}
+     * @type {?theEliteGames.models.Data}
      */
-    var retVal = false;
+    var data = null;
 
-    /**
-     * @type {!string}
-     */
-    var errorMessage = '';
+    if (json instanceof Object) {
 
-    if (json === null || json === undefined) {
-        errorMessage = 'null returned. Object expected.';
-    } else if (json instanceof Object) {
+        console.log('Content - validateJsonData_ : json instanceof Object');
 
-        if (!json.hasOwnProperty('games')) {
-            errorMessage = ' missing games property';
-        } else if (!json.hasOwnProperty('stores')) {
-            errorMessage = ' missing stores property';
+        /**
+         * @type {?Array<!theEliteGames.models.Game>}
+         */
+        var games = null;
+
+        /**
+         * @type {?Array<!theEliteGames.models.Store>}
+         */
+        var stores = null;
+
+        if (json.hasOwnProperty('games')) {
+            games = this.validateJsonGames_(json['games']);
         } else {
-            
-            retVal = true;
+            console.error('Games is not found.');
+        }
+
+        if (json.hasOwnProperty('stores')) {
+            stores = this.validateJsonStores_(json['stores']);
+        } else {
+            console.error('Stores is not found.');
+        }
+        console.log('Content - validateJsonData_ : stores = ' + JSON.stringify(stores));
+        if (!!games && !!stores) {
+
+            data = new theEliteGames.models.Data();
+            data.games = games;
+            data.stores = stores;
+        }
+    } else {
+        console.error('The global object expect to be Object');
+    }
+
+    return data;
+};
+
+
+/**
+ * @param {?Object|undefined} json
+ * @return {?Array<!theEliteGames.models.Game>}
+ * @private
+ */
+theEliteGames.blocks.Content.prototype.validateJsonGames_ = function(json) {
+
+    /**
+     * @type {?Array<!theEliteGames.models.Game>}
+     */
+    var games = null;
+
+    if (json instanceof Array) {
+
+        /**
+         * @type {!number}
+         */
+        var i = 0;
+
+        /**
+         * @type {!number}
+         */
+        var l = json.length;
+        if (l) {
+
+            games = [];
+
+            for (; i < l; i++) {
+
+                /**
+                 * @type {?theEliteGames.models.Game}
+                 */
+                var game = this.validateJsonGame_(json[i]);
+
+                if (game) {
+                    games.push(game);
+                } else {
+                    games = null;
+                    break;
+                }
+            }
+        }
+    } else {
+        console.error('Games property expected to be an Array');
+    }
+
+    return games;
+};
+
+
+/**
+ * @param {?Object|undefined} json
+ * @return {?Array<!theEliteGames.models.Store>}
+ * @private
+ */
+theEliteGames.blocks.Content.prototype.validateJsonStores_ = function(json) {
+
+    console.log('Content - validateJsonStores_ : json = ' + JSON.stringify(json));
+
+    /**
+     * @type {?Array<!theEliteGames.models.Store>}
+     */
+    var stores = null;
+
+    if (json instanceof Array) {
+
+        /**
+         * @type {!number}
+         */
+        var i = 0;
+
+        /**
+         * @type {!number}
+         */
+        var l = json.length;
+
+        console.log('Content - validateJsonStores_ : l = ' + l);
+
+        stores = [];
+
+        for (; i < l; i++) {
+
+            /**
+             * @type {?theEliteGames.models.Store}
+             */
+            var store = this.validateJsonStore_(json[i]);
+
+            console.log('Content - validateJsonStores_ : store = ' + JSON.stringify(store));
+
+            if (store) {
+                stores.push(store);
+            } else {
+                stores = null;
+                break;
+            }
+        }
+    } else {
+        console.error('Stores property expected to be an Array');
+    }
+
+    return stores;
+};
+
+
+/**
+ * @param {?Object|undefined} json
+ * @return {?theEliteGames.models.Game}
+ * @private
+ */
+theEliteGames.blocks.Content.prototype.validateJsonGame_ = function(json) {
+
+    /**
+     * @type {?theEliteGames.models.Game}
+     */
+    var game = null;
+
+    if (json instanceof Object) {
+
+        /**
+         * @type {?string}
+         */
+        var name = null;
+
+        if (json.hasOwnProperty('name')) {
+            name = json['name'];
+        } else {
+            console.error('Game object missed required field - name');
+        }
+
+        /**
+         * @type {?string}
+         */
+        var type = null;
+
+        if (json.hasOwnProperty('type')) {
+            type = json['type'];
+        } else {
+            console.error('Game object missed required field - type');
+        }
+
+        /**
+         * @type {?string}
+         */
+        var icon = null;
+
+        if (json.hasOwnProperty('icon')) {
+            icon = json['icon'];
+        } else {
+            console.error('Game object missed required field - icon');
+        }
+
+        /**
+         * @type {!string|undefined}
+         */
+        var youtube = undefined;
+
+        if (json.hasOwnProperty('youtube')) {
+            youtube = json['youtube'];
+        }
+
+        /**
+         * @type {!string|undefined}
+         */
+        var gameplayImage = undefined;
+
+        if (json.hasOwnProperty('gameplayImage')) {
+            gameplayImage = json['gameplayImage'];
+        }
+
+        /**
+         * @type {?string}
+         */
+        var description = null;
+
+        if (json.hasOwnProperty('description')) {
+            description = json['description'];
+        } else {
+            console.error('Game object missed required field - description');
+        }
+
+        /**
+         * @type {?Array<!theEliteGames.models.Link>}
+         */
+        var links = null;
+
+        if (json.hasOwnProperty('description')) {
+            links = this.validateJsonLinks_(json['links']);
+        } else {
+            console.error('Game object missed required field - links');
+        }
+
+        if (name && type && icon && description && links) {
+            game = new theEliteGames.models.Game();
+            game.name = name;
+            game.type = type;
+            game.icon = icon;
+            game.youtube = youtube;
+            game.gameplayImage = gameplayImage;
+            game.description = description;
+            game.links = links;
+        }
+
+
+    } else {
+        console.error('Game property expected to be an Object');
+    }
+
+    return game;
+};
+
+
+/**
+ * @param {?Object|undefined} json
+ * @return {?Array<!theEliteGames.models.Link>}
+ * @private
+ */
+theEliteGames.blocks.Content.prototype.validateJsonLinks_ = function(json) {
+
+    /**
+     * @type {?Array<!theEliteGames.models.Link>}
+     */
+    var links = null;
+
+    if (json instanceof Array) {
+
+        /**
+         * @type {!number}
+         */
+        var i = 0;
+
+        /**
+         * @type {!number}
+         */
+        var l = json.length;
+        if (l) {
+
+            links = [];
+
+            for (; i < l; i++) {
+
+                /**
+                 * @type {?theEliteGames.models.Link}
+                 */
+                var link = this.validateJsonLink_(json[i]);
+
+                if (link) {
+                    links.push(link);
+                } else {
+                    links = null;
+                    break;
+                }
+            }
+        }
+    } else {
+        console.error('Links property expected to be an Array');
+    }
+
+    return links;
+};
+
+
+/**
+ * @param {?Object|undefined} json
+ * @return {?theEliteGames.models.Link}
+ * @private
+ */
+theEliteGames.blocks.Content.prototype.validateJsonLink_ = function(json) {
+
+    /**
+     * @type {?theEliteGames.models.Link}
+     */
+    var link = null;
+
+    if (json instanceof Object) {
+
+        /**
+         * @type {?string}
+         */
+        var store = null;
+
+        if (json.hasOwnProperty('store')) {
+            store = json['store'];
+        } else {
+            console.error('Link object missed required field - store');
+        }
+
+        /**
+         * @type {?string}
+         */
+        var url = null;
+
+        if (json.hasOwnProperty('url')) {
+            url = json['url'];
+        } else {
+            console.error('Link object missed required field - url');
+        }
+
+        if (store && url) {
+            link = new theEliteGames.models.Link();
+            link.store = store;
+            link.url = url;
+        }
+
+
+    } else {
+        console.error('Link property expected to be an Object');
+    }
+
+    return link;
+};
+
+
+/**
+ * @param {?Object|undefined} json
+ * @return {?theEliteGames.models.Store}
+ * @private
+ */
+theEliteGames.blocks.Content.prototype.validateJsonStore_ = function(json) {
+
+    console.log('Content - validateJsonStore_');
+    console.log('Content - validateJsonStore_ : json = ' + JSON.stringify(json));
+
+    /**
+     * @type {?theEliteGames.models.Store}
+     */
+    var store = null;
+
+    if (json instanceof Object) {
+
+        /**
+         * @type {?string}
+         */
+        var name = null;
+
+        if (json.hasOwnProperty('name')) {
+            name = json['name'];
+        } else {
+            console.error('Store object missed required field - name');
+        }
+
+        /**
+         * @type {?string}
+         */
+        var icon = null;
+
+        if (json.hasOwnProperty('icon')) {
+            icon = json['icon'];
+        } else {
+            console.error('Store object missed required field - icon');
+        }
+
+        if (name && icon) {
+            store = new theEliteGames.models.Store();
+            store.name = name;
+            store.icon = icon;
         }
 
     } else {
-        errorMessage =  json.prototype.toString() + 'returned. Object expected.';
+        console.error('Store property expected to be an Object');
     }
 
-    if (!retVal) {
-        console.error('data.json: Validation failed!');
-        console.error('data.json: ' + errorMessage);
-    }
-
-    return retVal;
+    return store;
 };
 
 
