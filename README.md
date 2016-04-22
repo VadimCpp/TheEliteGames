@@ -11,6 +11,5 @@ To set up working environment open install.txt and follow the instructions.
 - add description and keywords tags;
 - add google analitics or yandex metrika;
 - add share panel;
-- add json validator;
 - implement error screen;
 - write json spec.
