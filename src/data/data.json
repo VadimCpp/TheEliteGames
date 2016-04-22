@@ -45,7 +45,7 @@
       "name" : "Mech Defender",
       "type" : "STRATEGY",
       "icon" : "md.png",
-      "youtube" : "",
+      "gameplayImage" : "sc_mech.jpg",
       "description" : "Pilot a Mech to defend your home from zombies. MechDefender is a next chapter in Hero Tower Defense series. With Tower and Weapons and new tricky maps.",
       "links" : [
         { "store" : "Nook",    "url" : "http://www.barnesandnoble.com/w/mechdefender-elite-games/1120177584?ean=2940147213544"  },
@@ -98,6 +98,7 @@
       "type" : "ARCADE",
       "description" : "One step at a time, your space program is taking off. Use the money earned from each launch to upgrade your rocket. Grab all the powerups and fuel you can while heading for the stratosphere. Avoid colliding with blimps, balloons and UFOs - they hurt! How fast can you get to the moon?",
       "icon" : "mn.png",
+      "gameplayImage" : "sc_moon.png",
       "links" : [
         { "store" : "App Store",   "url" : "https://itunes.apple.com/app/fly-to-the-moon!/id534274992?mt=8" },
         { "store" : "Google Play", "url" : "https://play.google.com/store/apps/details?id=com.elitegamesltd.tomoon" },

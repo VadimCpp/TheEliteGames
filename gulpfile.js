@@ -64,7 +64,7 @@ gulp.task('sass', function() {
 
 
 gulp.task('img', function() {
-    return gulp.src('src/img/**/*.png')
+    return gulp.src(['src/img/**/*.png', 'src/img/**/*.jpg'])
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],

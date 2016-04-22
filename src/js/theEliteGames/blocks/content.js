@@ -65,7 +65,7 @@ theEliteGames.blocks.Content.prototype.getGames_ = function() {
      *
      * @type {!number}
      */
-    var TIMEOUT = 1000;
+    var TIMEOUT = 500;
 
     /**
      * @type {!theEliteGames.blocks.Content}
@@ -103,8 +103,6 @@ theEliteGames.blocks.Content.prototype.onRequestComplete_ = function() {
              * @type {?theEliteGames.models.Data}
              */
             var data = this.validateJsonData_(responseJson);
-
-            console.warn(JSON.stringify(data));
 
             if (data) {
                 this.loadData_(data);
@@ -171,15 +169,12 @@ theEliteGames.blocks.Content.prototype.loadData_ = function(data) {
  * @private
  */
 theEliteGames.blocks.Content.prototype.validateJsonData_ = function(json) {
-    console.log('Content - validateJsonData_');
     /**
      * @type {?theEliteGames.models.Data}
      */
     var data = null;
 
     if (json instanceof Object) {
-
-        console.log('Content - validateJsonData_ : json instanceof Object');
 
         /**
          * @type {?Array<!theEliteGames.models.Game>}
@@ -202,7 +197,7 @@ theEliteGames.blocks.Content.prototype.validateJsonData_ = function(json) {
         } else {
             console.error('Stores is not found.');
         }
-        console.log('Content - validateJsonData_ : stores = ' + JSON.stringify(stores));
+
         if (!!games && !!stores) {
 
             data = new theEliteGames.models.Data();
@@ -274,8 +269,6 @@ theEliteGames.blocks.Content.prototype.validateJsonGames_ = function(json) {
  */
 theEliteGames.blocks.Content.prototype.validateJsonStores_ = function(json) {
 
-    console.log('Content - validateJsonStores_ : json = ' + JSON.stringify(json));
-
     /**
      * @type {?Array<!theEliteGames.models.Store>}
      */
@@ -293,8 +286,6 @@ theEliteGames.blocks.Content.prototype.validateJsonStores_ = function(json) {
          */
         var l = json.length;
 
-        console.log('Content - validateJsonStores_ : l = ' + l);
-
         stores = [];
 
         for (; i < l; i++) {
@@ -303,8 +294,6 @@ theEliteGames.blocks.Content.prototype.validateJsonStores_ = function(json) {
              * @type {?theEliteGames.models.Store}
              */
             var store = this.validateJsonStore_(json[i]);
-
-            console.log('Content - validateJsonStores_ : store = ' + JSON.stringify(store));
 
             if (store) {
                 stores.push(store);
@@ -535,9 +524,6 @@ theEliteGames.blocks.Content.prototype.validateJsonLink_ = function(json) {
  * @private
  */
 theEliteGames.blocks.Content.prototype.validateJsonStore_ = function(json) {
-
-    console.log('Content - validateJsonStore_');
-    console.log('Content - validateJsonStore_ : json = ' + JSON.stringify(json));
 
     /**
      * @type {?theEliteGames.models.Store}

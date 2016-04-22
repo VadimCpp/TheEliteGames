@@ -68,15 +68,43 @@ theEliteGames.GameView = function(game, stores) {
     this.videoContainer_ = new theEliteGames.elements.Base();
     this.videoContainer_.addClassName(goog.getCssName('the-elite-games-video-container'));
 
-    /**
-     * @type {!theEliteGames.elements.Base}
-     * @private
-     */
-    this.video_ = new theEliteGames.elements.Base('iframe');
-    this.video_.addClassName(goog.getCssName('the-elite-games-video'));
-    this.video_.setAttribute('src', this.game_.youtube ? this.game_.youtube : '');
-    this.video_.setAttribute('frameborder', '0');
-    this.video_.setAttribute('allowfullscreen', 'allowfullscreen');
+
+    if (this.game_.youtube) {
+        /**
+         * @type {!theEliteGames.elements.Base}
+         * @private
+         */
+        this.video_ = new theEliteGames.elements.Base('iframe');
+        this.video_.addClassName(goog.getCssName('the-elite-games-video'));
+        this.video_.setAttribute('src', this.game_.youtube ? this.game_.youtube : '');
+        this.video_.setAttribute('frameborder', '0');
+        this.video_.setAttribute('allowfullscreen', 'allowfullscreen');
+        this.videoContainer_.appendChild(this.video_);
+
+    } else {
+
+        /**
+         * @type {!string}
+         */
+        var imgUrl = '../img/theEliteGames.jpg';
+        if (this.game_.gameplayImage) {
+            imgUrl = '../img/gameplay/' + this.game_.gameplayImage
+        }
+
+        /**
+         * @type {!string}
+         */
+        var style = 'background-image: url(' + imgUrl + ');';
+
+        /**
+         * @type {!theEliteGames.elements.Base}
+         */
+        var image = new theEliteGames.elements.Base('div');
+        image.addClassName(goog.getCssName('the-elite-games-image'));
+        image.setAttribute('style', style);
+
+        this.videoContainer_.appendChild(image);
+    }
 
     /**
      * @type {!theEliteGames.elements.Base}
@@ -91,7 +119,6 @@ theEliteGames.GameView = function(game, stores) {
      */
     var storeBlock = this.getStoresBlock_();
 
-    this.videoContainer_.appendChild(this.video_);
     this.block_.appendChild(this.videoContainer_);
     this.block_.appendChild(this.description_);
     this.block_.appendChild(storeBlock);
