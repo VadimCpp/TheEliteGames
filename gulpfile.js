@@ -69,6 +69,7 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('dist/css'));
 });
 
+
 gulp.task('cssVocabulary', function() {
     gulp.src('dist/css/style.css')
         .pipe(gulpClosureCSSRenamer({
@@ -79,6 +80,7 @@ gulp.task('cssVocabulary', function() {
         }))
         .pipe(gulp.dest('dist'));
 });
+
 
 gulp.task('img', function() {
     return gulp.src(['src/img/**/*.png', 'src/img/**/*.jpg'])
