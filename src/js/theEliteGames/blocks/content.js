@@ -20,6 +20,7 @@ goog.provide('theEliteGames.blocks.Content');
 goog.require('goog.net.XhrIo');
 goog.require('theEliteGames.elements.Base');
 goog.require('theEliteGames.elements.Game');
+goog.require('theEliteGames.elements.Error');
 goog.require('theEliteGames.models.Data');
 goog.require('theEliteGames.models.Game');
 goog.require('theEliteGames.models.Store');
@@ -87,9 +88,8 @@ theEliteGames.blocks.Content.prototype.onRequestComplete_ = function() {
     var status = this.xhr_.getStatus();
 
     if (status !== 200) {
-        console.error('Bad status code (' + status + ')');
 
-        // TODO: display error message
+        this.appendChild(new theEliteGames.elements.Error('Cannot get data.json : bad status code (' + status + ').'));
 
     } else {
         /**
@@ -107,13 +107,14 @@ theEliteGames.blocks.Content.prototype.onRequestComplete_ = function() {
             if (data) {
                 this.loadData_(data);
             } else {
-                // TODO: display error dialogue.
-                console.error('TODO: display error dialogue');
+
+                this.appendChild(new theEliteGames.elements.Error('Cannot get data.json : parse error. See console messages.'));
+
             }
 
         } else {
 
-            console.error('Cannot display games :(');
+            this.appendChild(new theEliteGames.elements.Error('Cannot get data.json : empty response received.'));
 
         }
     }

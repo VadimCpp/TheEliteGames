@@ -5,8 +5,5 @@
 # Getting Started
 To set up working environment open install.txt and follow the instructions.
 # TODO
-- add description and keywords tags;
 - add google analitics or yandex metrika;
-- add share panel;
-- implement error screen;
 - write json spec.

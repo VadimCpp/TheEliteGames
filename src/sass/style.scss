@@ -146,6 +146,27 @@ div.img-close:hover {
     opacity: 1;
 }
 
+div.the-elite-games-elements-error {
+    margin-bottom: 15px;
+    max-width: 445px;
+    border-radius: 10px;
+    border: 2px solid orangered;
+    min-height: 260px;
+
+    > div.title {
+        margin-bottom: 5px;
+        color: #da5700;
+        text-shadow: 0px 1px 0px #000;
+        text-align: center;
+        font: 500 20px/28px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    > div.message {
+        margin-bottom: 5px;
+        font: 500 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+        padding: 10px;
+    }
+}
 
 div.the-elite-games-elements-game {
 
