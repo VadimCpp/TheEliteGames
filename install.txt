@@ -50,8 +50,12 @@ Setting up working environment:
 
 
 12. Install imagemin-pngquant
-npm install --save-dev imagemin-pngquant
+> npm install --save-dev imagemin-pngquant
 
 
 13. Install gulp-imagemin
-npm install --save-dev gulp-imagemin
+> npm install --save-dev gulp-imagemin
+
+
+14. Install  gulp-closure-css-renamer
+> npm install --save-dev gulp-closure-css-renamer

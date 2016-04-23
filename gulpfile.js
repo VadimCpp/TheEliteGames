@@ -10,10 +10,11 @@ var del = require('del');
 var cssmin = require('gulp-cssmin');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var gulpClosureCSSRenamer = require('gulp-closure-css-renamer');
 
 
 gulp.task('js', function() {
-    return gulp.src(['src/js/theEliteGames/**/*.js', 'src/js/closure-library/closure/goog/**/*.js'])
+    return gulp.src(['dist/css/rename.js', 'src/js/theEliteGames/**/*.js', 'src/js/closure-library/closure/goog/**/*.js'])
         .pipe(closureCompiler({
                 compilerPath: 'src/js/closure-library/closure/bin/build/compiler.jar',
                 fileName: 'app.js',
@@ -68,6 +69,16 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('dist/css'));
 });
 
+gulp.task('cssVocabulary', function() {
+    gulp.src('dist/css/style.css')
+        .pipe(gulpClosureCSSRenamer({
+            sourceMap: true,
+            compress: true,
+            parseType: 'full',
+            renameFile: './dist/css/rename.js'
+        }))
+        .pipe(gulp.dest('dist'));
+});
 
 gulp.task('img', function() {
     return gulp.src(['src/img/**/*.png', 'src/img/**/*.jpg'])
@@ -81,7 +92,7 @@ gulp.task('img', function() {
 
 
 gulp.task('build', function(callback) {
-    runSequence('del', 'html', 'robots', 'favicon', 'data', 'sass', 'img', 'js', callback);
+    runSequence('del', 'html', 'robots', 'favicon', 'data', 'sass', 'cssVocabulary', 'img', 'js', callback);
 });
 
 
