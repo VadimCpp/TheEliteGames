@@ -5,7 +5,6 @@
 # Getting Started
 To set up working environment open install.txt and follow the instructions.
 # TODO
-- add og tags;
 - add license;
 - add robots.txt;
 - add description and keywords tags;
