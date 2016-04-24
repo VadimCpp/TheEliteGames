@@ -185,9 +185,9 @@ div.the-elite-games-elements-game {
         border-radius: 10px;
         border: 2px solid orangered;
         min-height: 100px;
-        background: -moz-linear-gradient(top,  rgba(255,174,108,1) 0%, rgba(255,174,108,0) 50%, rgba(255,174,108,0) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top,  rgba(255,174,108,1) 0%, rgba(255,174,108,0) 50%,rgba(255,174,108,0) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom,  rgba(255,174,108,1) 0%, rgba(255,174,108,0) 50%,rgba(255,174,108,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        background: -moz-linear-gradient(top, rgba(255,174,108,1) 0%, rgba(255,174,108,0) 50%, rgba(255,174,108,0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(255,174,108,1) 0%, rgba(255,174,108,0) 50%,rgba(255,174,108,0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(255,174,108,1) 0%, rgba(255,174,108,0) 50%,rgba(255,174,108,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffae6c', endColorstr='#00ffae6c',GradientType=0 ); /* IE6-9 */
 
         > div.game-type {
@@ -198,9 +198,9 @@ div.the-elite-games-elements-game {
 
             /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffb76b+0,ffa73d+40,ff7c00+58,ff7f04+100 */
             background: rgb(255,183,107); /* Old browsers */
-            background: -moz-linear-gradient(top,  rgba(255,183,107,1) 0%, rgba(255,167,61,1) 40%, rgba(255,124,0,1) 58%, rgba(255,127,4,1) 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(top,  rgba(255,183,107,1) 0%,rgba(255,167,61,1) 40%,rgba(255,124,0,1) 58%,rgba(255,127,4,1) 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to bottom,  rgba(255,183,107,1) 0%,rgba(255,167,61,1) 40%,rgba(255,124,0,1) 58%,rgba(255,127,4,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            background: -moz-linear-gradient(top, rgba(255,183,107,1) 0%, rgba(255,167,61,1) 40%, rgba(255,124,0,1) 58%, rgba(255,127,4,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(255,183,107,1) 0%,rgba(255,167,61,1) 40%,rgba(255,124,0,1) 58%,rgba(255,127,4,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(255,183,107,1) 0%,rgba(255,167,61,1) 40%,rgba(255,124,0,1) 58%,rgba(255,127,4,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb76b', endColorstr='#ff7f04',GradientType=0 ); /* IE6-9 */
 
         }
@@ -293,7 +293,7 @@ div.the-elite-games-game-view {
     left: 0;
     width: 100%;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding: 0 10px;
     background: rgba(0, 0, 0, 0.8);
     box-sizing: border-box;
