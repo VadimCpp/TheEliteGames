@@ -5,7 +5,7 @@
 # Getting Started
 To set up working environment open install.txt and follow the instructions.
 # Website link:
-Oficial : [theelitegames.net](http://theelitegames.net) <br>
+Official : [theelitegames.net](http://theelitegames.net) <br>
 Test : [elitegames.biletvit.ru](http://elitegames.biletvit.ru)
 # data.json
 [data.json](https://github.com/VadimCpp/TheEliteGames/blob/master/src/data/data.json) file has following format:
