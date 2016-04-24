@@ -4,5 +4,20 @@
 ![](https://raw.githubusercontent.com/VadimCpp/theelitegames.lc/master/src/img/theEliteGames.jpg)
 # Getting Started
 To set up working environment open install.txt and follow the instructions.
-# TODO
-- write json spec.
+# Website link:
+Oficial : [theelitegames.net](http://theelitegames.net) <br>
+Test : [elitegames.biletvit.ru](http://elitegames.biletvit.ru)
+# data.json
+[data.json](https://github.com/VadimCpp/TheEliteGames/blob/master/src/data/data.json) file has following format:
+<pre>
+&ltdata&gt ::= &ltgames&gt &ltstores&gt
+&ltgames&gt ::= [ &ltgame&gt ]
+&ltgame&gt ::= &ltname&gt &lttype&gt &ltdescription&gt &lticon&gt &ltname&gt (&ltgameplayImage&gt) (&ltyoutube&gt) &ltlinks&gt
+&ltlinks&gt ::= [&ltlink&gt]
+&ltlink&gt :: &ltstore&gt &lturl&gt
+&ltstores&gt ::= [ &ltstore&gt ]
+&ltstore&gt ::= &ltname&gt &lticon&gt
+
+[] - 1+ occurence
+() - 0 or 1 occurence
+</pre>
