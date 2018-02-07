@@ -86,9 +86,9 @@ theEliteGames.GameView = function(game, stores) {
         /**
          * @type {!string}
          */
-        var imgUrl = '/img/theEliteGames.jpg';
+        var imgUrl = '../img/theEliteGames.jpg';
         if (this.game_.gameplayImage) {
-            imgUrl = '/img/gameplay/' + this.game_.gameplayImage
+            imgUrl = '../img/gameplay/' + this.game_.gameplayImage
         }
 
         /**
@@ -182,7 +182,7 @@ theEliteGames.GameView.prototype.getStoresBlock_ = function() {
         /**
          * @type {!string}
          */
-        var backgroundImage = 'background-image: url("/img/stores/' + storeImg + '");';
+        var backgroundImage = 'background-image: url("../img/stores/' + storeImg + '");';
 
         /**
          * @type {!theEliteGames.elements.Link}
