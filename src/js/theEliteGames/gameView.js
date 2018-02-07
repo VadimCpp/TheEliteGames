@@ -182,7 +182,7 @@ theEliteGames.GameView.prototype.getStoresBlock_ = function() {
         /**
          * @type {!string}
          */
-        var backgroundImage = 'background-image: url("../img/stores/' + storeImg + '");';
+        var backgroundImage = 'background-image: url("/img/stores/' + storeImg + '");';
 
         /**
          * @type {!theEliteGames.elements.Link}
