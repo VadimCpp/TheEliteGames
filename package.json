@@ -4,6 +4,7 @@
   "description": "The Elite Games website build with Google Closure",
   "main": "gulpfile.js",
   "scripts": {
+    "dev": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

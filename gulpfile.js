@@ -13,7 +13,24 @@ var pngquant = require('imagemin-pngquant');
 var gulpClosureCSSRenamer = require('gulp-closure-css-renamer');
 
 
-gulp.task('js', function() {
+gulp.task('js-dev', function() {
+    return gulp.src(['dist/css/rename.js', 'src/js/theEliteGames/**/*.js', 'src/js/closure-library/closure/goog/**/*.js'])
+        .pipe(closureCompiler({
+                compilerPath: 'src/js/closure-library/closure/bin/build/compiler.jar',
+                fileName: 'app.js',
+                compilerFlags: {
+                    closure_entry_point: 'theEliteGames.App',
+                    // compilation_level: 'ADVANCED_OPTIMIZATIONS',
+                    compilation_level: 'WHITESPACE_ONLY',
+                    only_closure_dependencies: true,
+                    warning_level: 'VERBOSE'
+                }
+            })
+        )
+        .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('js-release', function() {
     return gulp.src(['dist/css/rename.js', 'src/js/theEliteGames/**/*.js', 'src/js/closure-library/closure/goog/**/*.js'])
         .pipe(closureCompiler({
                 compilerPath: 'src/js/closure-library/closure/bin/build/compiler.jar',
@@ -93,8 +110,13 @@ gulp.task('img', function() {
 });
 
 
-gulp.task('build', function(callback) {
-    runSequence('del', 'html', 'robots', 'favicon', 'data', 'sass', 'cssVocabulary', 'img', 'js', callback);
+gulp.task('build-dev', function(callback) {
+    runSequence('del', 'html', 'robots', 'favicon', 'data', 'sass', 'cssVocabulary', 'img', 'js-dev', callback);
+});
+
+
+gulp.task('build-release', function(callback) {
+    runSequence('del', 'html', 'robots', 'favicon', 'data', 'sass', 'cssVocabulary', 'img', 'js-release', callback);
 });
 
 
@@ -102,8 +124,8 @@ gulp.task('watch', function() {
     gulp.watch('src/src/index.html', ['html']);
     gulp.watch('src/src/data/data.json', ['data']);
     gulp.watch('src/sass/*.scss', ['sass']);
-    gulp.watch('src/js/theEliteGames/**/*.js', ['build']);
+    gulp.watch('src/js/theEliteGames/**/*.js', ['build-dev']);
 });
 
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['build-dev', 'watch']);

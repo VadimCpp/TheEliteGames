@@ -9,13 +9,35 @@ To set up dev environment:
 ```bash
 
 # Clone the repo
-git clone https://github.com/VadimCpp/TheEliteGames.git
+git clone https://github.com/VadimCpp/TheEliteGames.git theelitegames
 
 # Go to the project directory
-cd TheEliteGames
+cd theelitegames
 
 # Install dependencies
 npm install
+
+# Go to javascript sources folder
+cd src/js/
+
+# Clone Clousure library sources
+git clone https://github.com/google/closure-library
+
+# Go to Closure build folder
+cd closure-library/closure/bin/build
+
+# Download zip file with Closure Compiler
+curl -o compiler-latest.zip 'http://dl.google.com/closure-compiler/compiler-latest.zip'
+
+# Unpack zip
+unzip -a compiler-latest.zip
+
+# Rename any extracte version to compiler.jar
+mv *.jar compiler.jar
+
+#Voila! You are almost here.
+
+
 
 ```
 
