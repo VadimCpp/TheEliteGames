@@ -52,10 +52,12 @@ npm run deploy
 ```
 
 
-
 # Website links
-Official : [theelitegames.net](http://theelitegames.net) <br>
-Test : [elitegames.biletvit.ru](http://elitegames.biletvit.ru)
+
+Visit website : [http://vadimcpp.github.io/TheEliteGames/](http://vadimcpp.github.io/TheEliteGames/)
+
+Official : [theelitegames.net](http://theelitegames.net)
+
 # data.json
 [data.json](https://github.com/VadimCpp/TheEliteGames/blob/master/src/data/data.json) file has following format:
 <pre>
