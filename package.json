@@ -15,5 +15,16 @@
   "bugs": {
     "url": "https://github.com/VadimCpp/TheEliteGames/issues"
   },
-  "homepage": "https://github.com/VadimCpp/TheEliteGames#readme"
+  "homepage": "https://github.com/VadimCpp/TheEliteGames#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-closure-compiler": "^0.4.0",
+    "gulp-closure-css-renamer": "0.0.2",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-sass": "^3.1.0",
+    "imagemin-pngquant": "^5.0.1",
+    "run-sequence": "^2.2.1"
+  }
 }
