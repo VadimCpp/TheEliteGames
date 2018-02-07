@@ -88,7 +88,7 @@ theEliteGames.GameView = function(game, stores) {
          */
         var imgUrl = '../img/theEliteGames.jpg';
         if (this.game_.gameplayImage) {
-            imgUrl = '../img/gameplay/' + this.game_.gameplayImage
+            imgUrl = '../img/' + this.game_.gameplayImage
         }
 
         /**
@@ -182,7 +182,7 @@ theEliteGames.GameView.prototype.getStoresBlock_ = function() {
         /**
          * @type {!string}
          */
-        var backgroundImage = 'background-image: url("../img/stores/' + storeImg + '");';
+        var backgroundImage = 'background-image: url("../img/' + storeImg + '");';
 
         /**
          * @type {!theEliteGames.elements.Link}
