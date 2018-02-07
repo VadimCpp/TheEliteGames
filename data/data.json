@@ -1,0 +1,157 @@
+{
+  "games" : [
+    {
+      "name" : "Royal Offence",
+      "type" : "STRATEGY",
+      "icon" : "ro.png",
+      "youtube" : "http://www.youtube.com/embed/cKeu1HAKHMg",
+      "description" : "Royal Offense contains elements of role play: while fulfilling your orders, the heroes improve their skills and talents, as well as earn cash to be spent on new equipment, weapons, and magical elixirs.",
+      "links" : [
+        { "store" : "Google Play",  "url" : "https://play.google.com/store/apps/details?id=com.elitegamesltd.royaloffense" },
+        { "store" : "App Store",    "url" : "https://itunes.apple.com/app/royal-offense/id659970011?mt=8" },
+        { "store" : "Amazon",       "url" : "http://www.amazon.com/Elite-Games-Ltd-Royal-Offense/dp/B00EP3BGWY/" },
+        { "store" : "Nook",         "url" : "http://www.barnesandnoble.com/w/royal-offense-elite-games-ltd/1116824411?ean=2940147147849" },
+        { "store" : "Samsung",      "url" : "http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000674566" },
+        { "store" : "Ouya",         "url" : "https://www.ouya.tv/game/Royal-Offense/" }
+      ]
+    },
+    {
+      "name" : "Royal Heroes",
+      "type" : "STRATEGY",
+      "icon" : "rh.png",
+      "youtube" : "http://www.youtube.com/embed/zVisYql1zrA",
+      "description" : "A land plagued by black magic and creatures that crawl out of the darkness. Once this was a great kingdom. It could be great again. Hire an army of legendary heroes and battle vast waves of monsters.",
+      "links" : [
+        { "store" : "Google Play", "url" : "https://play.google.com/store/apps/details?id=com.elitegamesltd.royalheroes" },
+        { "store" : "App Store",   "url" : "http://itunes.apple.com/app/id985595486?mt=8&uo=4&at=11l5Y9" },
+        { "store" : "Amazon",      "url" : "http://www.amazon.com/dp/B017ODZ9GU/" },
+        { "store" : "Nook",        "url" : "https://www.ouya.tv/game/Royal-Heroes/" },
+        { "store" : "Ouya",        "url" : "http://steamcommunity.com/sharedfiles/filedetails/?id=523260275" },
+        { "store" : "Steam",       "url" : "http://steamcommunity.com/sharedfiles/filedetails/?id=523260275" },
+        { "store" : "Kickstarter", "url" : "https://www.kickstarter.com/projects/1198400811/royal-heroes-for-ouya-mac-pc-mobile-and-more" }
+      ]
+    },
+    {
+      "name" : "Royal Blacksmith",
+      "type" : "SIM",
+      "icon" : "bs.png",
+      "youtube" : "",
+      "description" : "Build your own royal Blacksmith. With blackjack and stuff. Soon on every devices.",
+      "links" : [
+        { "store" : "App Store",    "url" : "javascript:alert('Not yet');"  }
+      ]
+    },
+    {
+      "name" : "Mech Defender",
+      "type" : "STRATEGY",
+      "icon" : "md.png",
+      "gameplayImage" : "sc_mech.jpg",
+      "description" : "Pilot a Mech to defend your home from zombies. MechDefender is a next chapter in Hero Tower Defense series. With Tower and Weapons and new tricky maps.",
+      "links" : [
+        { "store" : "Nook",    "url" : "http://www.barnesandnoble.com/w/mechdefender-elite-games/1120177584?ean=2940147213544"  },
+        { "store" : "Samsung", "url" : "http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000904283"  }
+      ]
+    },
+    {
+      "name" : "Control Craft 2",
+      "type" : "STRATEGY",
+      "icon" : "cc2.png",
+      "youtube" : "http://www.youtube.com/embed/RzlAuS6jVNs",
+      "description" : "A fast thinking RTS game, with tactic capabilities and graphics in unique style. Take over the enemy colonies to battle your way through challenging levels that call for your skill and wit. Upgrade your troop, pimp up your super weapons and smash enemies to save your Planet.",
+      "links" : [
+        { "store" : "App Store",   "url" : "https://itunes.apple.com/app/controlcraft-2/id531648566?mt=8" },
+        { "store" : "Google Play", "url" : "https://play.google.com/store/apps/details?id=com.elitegamesltd.cc2" },
+        { "store" : "Amazon",      "url" : "http://www.amazon.com/Elite-Games-Ltd-ControlCraft-2/dp/B008A0NU2W/" },
+        { "store" : "Nook",        "url" : "http://www.barnesandnoble.com/w/controlcraft-2-elite-games/1116423854?ean=2940147144275" },
+        { "store" : "Samsung",     "url" : "http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000639828" }
+      ]
+    },
+    {
+      "name" : "Control Craft 3",
+      "type" : "STRATEGY",
+      "icon" : "cc3.png",
+      "description" : "Command your troops to attack enemy control points. Utilize a wide range of troops and tactical abilities. During the heat of the battle, tactical decisions of when, where and how to attack will win or lose you the war.",
+      "links" : [
+        { "store" : "App Store",   "url" : "https://itunes.apple.com/app/controlcraft-3/id670524067?mt=8" },
+        { "store" : "Google Play", "url" : "https://play.google.com/store/apps/details?id=com.elitegamesltd.cc3" },
+        { "store" : "Amazon",      "url" : "http://www.amazon.com/Cybernate-ControlCraft-3/dp/B00EP4EKZ8/" },
+        { "store" : "Nook",        "url" : "http://www.barnesandnoble.com/w/controlcraft-3-elite-games-ltd/1117255490?ean=2940147155769" },
+        { "store" : "Samsung",     "url" : "http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000780150" }
+      ],
+      "youtube" : "http://www.youtube.com/embed/kdeGeHwG-gs"
+    },
+    {
+      "name" : "Merlins Lab",
+      "type" : "PUZZLE",
+      "description" : "Merlins Lab is an puzzle game in which you try to find the philosopher's stone. The closer you to final aim, the more points you score.",
+      "icon" : "ml.png",
+      "links" : [
+        { "store" : "App Store",   "url" : "https://itunes.apple.com/us/app/merlins-lab/id740544214?mt=8" },
+        { "store" : "Google Play", "url" : "https://play.google.com/store/apps/details?id=com.elitegamesltd.merlins" },
+        { "store" : "Amazon",      "url" : "http://www.amazon.com/Elite-Games-Ltd-Merlins-Lab/dp/B00HRCLIA0" },
+        { "store" : "Nook",        "url" : "http://www.barnesandnoble.com/w/merlins-lab-elitegames-ltd/1118327290?ean=2940147174920" }
+      ],
+      "youtube" : "http://www.youtube.com/embed/UBxoG6dD8Jc"
+    },
+    {
+      "name" : "Fly to the Moon!",
+      "type" : "ARCADE",
+      "description" : "One step at a time, your space program is taking off. Use the money earned from each launch to upgrade your rocket. Grab all the powerups and fuel you can while heading for the stratosphere. Avoid colliding with blimps, balloons and UFOs - they hurt! How fast can you get to the moon?",
+      "icon" : "mn.png",
+      "gameplayImage" : "sc_moon.png",
+      "links" : [
+        { "store" : "App Store",   "url" : "https://itunes.apple.com/app/fly-to-the-moon!/id534274992?mt=8" },
+        { "store" : "Google Play", "url" : "https://play.google.com/store/apps/details?id=com.elitegamesltd.tomoon" },
+        { "store" : "Amazon",      "url" : "http://www.amazon.com/Elite-Games-Ltd-Fly-Moon/dp/B00FGXYZZ2/" },
+        { "store" : "Nook",        "url" : "http://www.barnesandnoble.com/w/fly-to-the-moon-elite-games-net/1117255487?ean=2940147155745" },
+        { "store" : "Samsung",     "url" : "http://apps.samsung.com/mars/topApps/topAppsDetail.as?productId=000000639798" },
+        { "store" : "Ouya",        "url" : "https://www.ouya.tv/game/Fly-to-the-Moon/" }
+      ]
+    },
+    {
+      "name" : "Regulator",
+      "type" : "PLATFOMER",
+      "description" : "Regulator - an action/platformer in the style of metroidvania. The player searches through an underground base for worlds most dangerous terrorist leader, and its definitely not to reward him with candies and hugs.",
+      "icon" : "r.png",
+      "links" : [
+          { "store" : "Steam", "url" : "http://steamcommunity.com/sharedfiles/filedetails/?id=374322738" }
+      ],
+      "youtube" : "https://www.youtube.com/embed/m0gX5uhPs2Y"
+    }
+  ],
+
+  "stores" : [
+    {
+      "name" : "Amazon",
+      "icon" : "amazon.png"
+    },
+    {
+      "name" : "App Store",
+      "icon" : "apple.png"
+    },
+    {
+      "name" : "Google Play",
+      "icon" : "google.png"
+    },
+    {
+      "name" : "Kickstarter",
+      "icon" : "kickstarter.png"
+    },
+    {
+      "name" : "Nook",
+      "icon" : "nook.png"
+    },
+    {
+      "name" : "Ouya",
+      "icon" : "ouya.png"
+    },
+    {
+      "name" : "Samsung",
+      "icon" : "samsung.png"
+    },
+    {
+      "name" : "Steam",
+      "icon" : "steam.png"
+    }
+  ]
+}
