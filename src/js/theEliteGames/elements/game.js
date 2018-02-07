@@ -136,7 +136,9 @@ theEliteGames.elements.Game.prototype.getDescriptionBlock_ = function() {
     /**
      * @type {!string}
      */
-    var background = 'background: url("../img/' + this.game_.icon + '");';
+    var background = 'background: url("'
+        + window.location.origin + window.location.pathname
+        + '/img/icons/' + this.game_.icon + '");';
 
     /**
      * @type {!theEliteGames.elements.Base}
@@ -207,7 +209,9 @@ theEliteGames.elements.Game.prototype.getStoresBlock_ = function() {
         /**
          * @type {!string}
          */
-        var backgroundImage = 'background-image: url("../img/' + storeImg + '");';
+        var backgroundImage = 'background-image: url("'
+            + window.location.origin + window.location.pathname
+            + '/img/stores/' + storeImg + '");';
 
         /**
          * @type {!theEliteGames.elements.Link}
