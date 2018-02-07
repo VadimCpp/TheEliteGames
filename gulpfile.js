@@ -145,7 +145,7 @@ gulp.task('default', ['browserSync', 'build-dev', 'watch']);
 
 
 // Deploy build to github pages
-gulp.task('gh-pages', [ 'build-release' ], function(done) {
+gulp.task('gh-pages', function(done) {
   var ghpages = require('gh-pages');
 
   ghpages.publish('dist', function(err) {
