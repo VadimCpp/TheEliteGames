@@ -3,7 +3,22 @@
 <br><br>
 ![](https://raw.githubusercontent.com/VadimCpp/theelitegames.lc/master/src/img/theEliteGames.jpg)
 # Getting Started
-To set up working environment open install.txt and follow the instructions.
+
+To set up dev environment:
+
+```bash
+
+# Clone the repo
+git clone https://github.com/VadimCpp/TheEliteGames.git
+
+# Go to the project directory
+cd TheEliteGames
+
+# Install dependencies
+npm install
+
+```
+
 # Website links
 Official : [theelitegames.net](http://theelitegames.net) <br>
 Test : [elitegames.biletvit.ru](http://elitegames.biletvit.ru)
