@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Vadim Cpp
+ * Copyright (c) 2016-2018 Vadim Cpp
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  * documentation files (the "Software"), to deal in the Software without restriction, including without limitation
@@ -28,6 +28,6 @@ goog.require('theEliteGames.elements.Base');
 theEliteGames.blocks.Footer = function() {
     theEliteGames.elements.Base.call(this);
     this.addClassName(goog.getCssName('the-elite-games-blocks-footer'));
-    this.getMainElement().innerHTML = '© 2014-2016 Elite Games Ltd';
+    this.getMainElement().innerHTML = '© 2014-2018 Elite Games Ltd';
 };
 goog.inherits(theEliteGames.blocks.Footer, theEliteGames.elements.Base);
