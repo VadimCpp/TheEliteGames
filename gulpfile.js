@@ -47,7 +47,7 @@ gulp.task('js-release', function() {
     return gulp.src(['dist/css/rename.js', 'src/js/theEliteGames/**/*.js', 'src/js/closure-library/closure/goog/**/*.js'])
         .pipe(closureCompiler({
                 compilerPath: 'src/js/closure-library/closure/bin/build/compiler.jar',
-                fileName: 'app.js',
+                fileName: 'dist/js/app.js',
                 compilerFlags: {
                     closure_entry_point: 'theEliteGames.App',
                     compilation_level: 'ADVANCED_OPTIMIZATIONS',
@@ -57,7 +57,7 @@ gulp.task('js-release', function() {
                 }
             })
         )
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('.'));
 });
 
 
