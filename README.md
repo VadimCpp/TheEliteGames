@@ -4,7 +4,7 @@
 ![](https://raw.githubusercontent.com/VadimCpp/theelitegames.lc/master/src/img/theEliteGames.jpg)
 # Getting Started
 
-To set up dev environment:
+To set up dev env:
 
 ```bash
 
@@ -35,21 +35,23 @@ unzip -a compiler-latest.zip
 # Rename any extracte version to compiler.jar
 mv *.jar compiler.jar
 
-```
-
-After installing all are ready to work. There are few commands for you:
 
 ```
 
+Use commands below following command are 
+```
 # To run development
 npm run dev
 
-# To release build
+# To build release for deploying
 npm run build
 
-
+# To deploy website to your github pages
+npm run deploy
 
 ```
+
+
 
 # Website links
 Official : [theelitegames.net](http://theelitegames.net) <br>
