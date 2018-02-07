@@ -35,7 +35,14 @@ unzip -a compiler-latest.zip
 # Rename any extracte version to compiler.jar
 mv *.jar compiler.jar
 
-#Voila! You are almost here.
+```
+
+After installing all are ready to work. There are few commands for you:
+
+```
+
+# To run development
+npm run dev
 
 
 

@@ -11,6 +11,19 @@ var cssmin = require('gulp-cssmin');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var gulpClosureCSSRenamer = require('gulp-closure-css-renamer');
+var browserSync = require('browser-sync').create();
+
+
+//
+// Configure the browserSync task
+//
+gulp.task('browserSync', function() {
+  browserSync.init({
+    server: {
+      baseDir: './dist'
+    }
+  })
+});
 
 
 gulp.task('js-dev', function() {
@@ -128,4 +141,4 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['build-dev', 'watch']);
+gulp.task('default', ['browserSync', 'build-dev', 'watch']);
