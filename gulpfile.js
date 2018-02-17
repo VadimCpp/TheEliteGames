@@ -1,5 +1,5 @@
 /**
- * Created by vadymkaninskyi on 02/04/16.
+ * Created on 02/04/16.
  */
 
 var gulp = require('gulp');
