@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/VadimCpp/TheEliteGames#readme",
   "devDependencies": {
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.24.1",
     "del": "^3.0.0",
     "gh-pages": "^1.1.0",
     "gulp": "^3.9.1",
@@ -28,8 +28,8 @@
     "gulp-cssmin": "^0.2.0",
     "gulp-gh-pages": "^0.5.4",
     "gulp-imagemin": "^4.1.0",
-    "gulp-sass": "^3.1.0",
-    "imagemin-pngquant": "^5.0.1",
+    "gulp-sass": "^3.2.1",
+    "imagemin-pngquant": "^5.1.0",
     "run-sequence": "^2.2.1"
   }
 }
